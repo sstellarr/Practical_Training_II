@@ -17,7 +17,8 @@
             <dataSource type="POOLED">
                 <!--数据库连接信息-->
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql:///mybatis?useSSL=false"/>
+                <!--注意连接的数据库名称-->
+                <property name="url" value="jdbc:mysql:///yytn?useSSL=false&amp;useServerPrepStmts=true"/>
 <!--                TODO-->
                 <property name="username" value="root"/>
                 <property name="password" value="1234"/>

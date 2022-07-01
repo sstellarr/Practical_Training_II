@@ -24,7 +24,7 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="true" />
+    <show-object-properties value="false" />
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
@@ -39,6 +39,7 @@
     <connection id="02b5782a-b826-435b-8d91-ac14e58133b3" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="02b5782a-b826-435b-8d91-ac14e58133b3" dataset="yytn.bedmanage" active-filter-id="" />
     <filter-actions connection-id="02b5782a-b826-435b-8d91-ac14e58133b3" dataset="mybatis.tb_user" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">

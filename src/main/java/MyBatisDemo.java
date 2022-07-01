@@ -1,8 +1,9 @@
-import mapper.UserMapper;
+import mapper.BedMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import pojo.Bed;
 import pojo.User;
 
 import java.io.IOException;
@@ -25,10 +26,10 @@ public class MyBatisDemo {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         //3. 执行sql
         //3.1 获取UserMapper接口的代理对象
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        List<User> users = userMapper.selectAll();
+        BedMapper it = sqlSession.getMapper(BedMapper.class);
+        List<Bed> ls = it.selectAll();
 
-        System.out.println(users);
+        System.out.println(ls);
         //4. 释放资源
         sqlSession.close();
     }

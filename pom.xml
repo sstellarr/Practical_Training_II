@@ -5,8 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>YYTN-NersingHome</artifactId>
+    <artifactId>Practical_Training_II</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -14,6 +16,21 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+
         <!--mysql 驱动-->
         <dependency>
             <groupId>mysql</groupId>
@@ -57,4 +74,18 @@
 
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <!-- <configuration>
+                     <path>/xxx</path>
+                 </configuration>-->
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
