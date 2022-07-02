@@ -18,7 +18,5 @@ CONSTRAINT fk_checkin_user FOREIGN KEY(checkin_id) REFERENCES customer(id)-->
         <result column="checkin_id" property="customerId"/>
     </resultMap>
 
-    <select id="selectAll" resultType="pojo.User">
-        select * from tb_user;
-    </select>
+
 </mapper>

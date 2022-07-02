@@ -11,7 +11,5 @@ state char(1)
         <result column="name" property="name"/>
         <result column="state" property="status"/>
     </resultMap>
-    <select id="selectAll" resultType="pojo.User">
-        select * from tb_user;
-    </select>
+
 </mapper>

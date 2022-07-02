@@ -6,6 +6,10 @@ import java.util.List;
 
 public interface BedService {
 
+    /**
+     * 查询所有
+     * @return
+     */
     List<Bed> selectAll();
 
     /**
@@ -13,5 +17,7 @@ public interface BedService {
      * @param bed
      */
     void add(Bed bed);
+
+
 
 }

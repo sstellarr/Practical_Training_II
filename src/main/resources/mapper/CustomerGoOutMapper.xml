@@ -23,7 +23,5 @@ CONSTRAINT fk_outgoing_user FOREIGN KEY(outgoing_id) REFERENCES customer(id)
         <result column="outgoing_id" property="customerId"/>
     </resultMap>
 
-    <select id="selectAll" resultType="pojo.User">
-        select * from tb_user;
-    </select>
+
 </mapper>

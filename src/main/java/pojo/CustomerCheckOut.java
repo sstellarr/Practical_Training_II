@@ -20,7 +20,7 @@ CONSTRAINT fk_retreat_user FOREIGN KEY(retreat_id) REFERENCES customer(id)
 );
 */
 
-public class CustomerCheckout {
+public class CustomerCheckOut {
     private Integer id;
     private Date retreatTime;   //退房时间
     private String retreatReason;   //退房原因
@@ -87,7 +87,7 @@ public class CustomerCheckout {
 
     @Override
     public String toString() {
-        return "CustomerCheckout{" +
+        return "CustomerCheckOut{" +
                 "id=" + id +
                 ", retreatTime=" + retreatTime +
                 ", retreatReason='" + retreatReason + '\'' +

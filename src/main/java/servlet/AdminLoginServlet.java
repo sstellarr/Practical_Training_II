@@ -1,4 +1,4 @@
-package web.servlet;
+package servlet;
 
 import mapper.AdministratorMapper;
 import org.apache.ibatis.io.Resources;
@@ -44,7 +44,7 @@ public class AdminLoginServlet extends HttpServlet {
         //判断是否为null
         if(admin!=null){
             //登录成功
-            //TODO:跳到加载品牌商菜单
+            //TODO:跳到index2.html
             writer.write("登录成功");
         }else{
             //登录失败

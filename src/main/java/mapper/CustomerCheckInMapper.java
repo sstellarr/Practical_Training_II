@@ -1,8 +1,13 @@
 package mapper;
 
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
+import pojo.Bed;
 import pojo.Customer;
+import pojo.CustomerCheckIn;
 
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -13,5 +18,11 @@ public interface CustomerCheckInMapper {
 
 
     @Select("select * from checkinrecord")
-    List<Customer> selectAll();
+    @ResultMap("CustomerCheckInResultMap")
+    List<CustomerCheckIn> selectAll();
+
+    @Insert("insert into checkinrecord values(null,#{bedId},#{checkInDate},,#{expirationDate},,#{attention},,null)")
+    void add(CustomerCheckIn customerCheckIn );
+
+
 }

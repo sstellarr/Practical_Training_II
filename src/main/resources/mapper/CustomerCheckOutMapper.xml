@@ -22,7 +22,5 @@ CONSTRAINT fk_retreat_user FOREIGN KEY(retreat_id) REFERENCES customer(id)
         <result column="retreat_id" property="retreatId"/>
     </resultMap>
 
-    <select id="selectAll" resultType="pojo.User">
-        select * from tb_user;
-    </select>
+
 </mapper>

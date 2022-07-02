@@ -18,7 +18,5 @@ CONSTRAINT fk_record_level FOREIGN KEY(record_levelid) REFERENCES nursinglevel(i
         <result column="record_userid" property="userId"/>
         <result column="record_levelid" property="levelId"/>
     </resultMap>
-    <select id="selectAll" resultType="pojo.User">
-        select * from tb_user;
-    </select>
+
 </mapper>

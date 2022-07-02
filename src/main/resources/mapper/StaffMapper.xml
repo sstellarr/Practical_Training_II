@@ -22,7 +22,5 @@ client_tel varchar(11)-->
 
     </resultMap>
 
-    <select id="selectAll" resultType="pojo.User">
-        select * from tb_user;
-    </select>
+
 </mapper>

@@ -14,7 +14,7 @@ account varchar(20),
 password varchar(20),
 height int,
 birthday date-->
-    <resultMap id="CustomerResultMapp=" type="Customer">
+    <resultMap id="CustomerResultMap=" type="Customer">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="gender" property="gender"/>
@@ -28,7 +28,5 @@ birthday date-->
         <result column="birthday" property="birthday"/>
     </resultMap>
 
-    <select id="selectAll" resultType="pojo.User">
-        select * from tb_user;
-    </select>
+
 </mapper>

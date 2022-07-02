@@ -1,4 +1,4 @@
-package web.servlet;
+package servlet;
 
 import mapper.AdministratorMapper;
 import mapper.StaffMapper;
@@ -43,7 +43,7 @@ public class StaffLoginServlet extends HttpServlet {
         //判断是否为null
         if(staff!=null){
             //登录成功
-            //TODO:跳到加载品牌商菜单:
+            //TODO:跳到index1.html
             //TODO:sendRedirect方法
             writer.write("登录成功");
         }else{

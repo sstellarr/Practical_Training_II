@@ -1,5 +1,6 @@
 package mapper;
 
+import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import pojo.CustomerGoOut;
 
@@ -11,5 +12,6 @@ import java.util.List;
  */
 public interface CustomerGoOutMapper {
     @Select("select * from outgoing")
+    @ResultMap("CustomerGoOutResultMap")
     List<CustomerGoOut> selectAll();
 }

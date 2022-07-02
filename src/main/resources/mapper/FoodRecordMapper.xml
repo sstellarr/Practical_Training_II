@@ -11,7 +11,5 @@ food_id int,
         <result column="food_id" property="foodId"/>
     </resultMap>
 
-    <select id="selectAll" resultType="pojo.User">
-        select * from tb_user;
-    </select>
+
 </mapper>
