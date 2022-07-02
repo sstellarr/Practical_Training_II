@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.StaffMapper">
+<!--    create table staff(
+id int primary key auto_increment,
+client_name varchar(15),
+client_gender char(1),
+client_id varchar(15),
+client_type char(2),
+client_account varchar(20),
+client_password varchar(20),
+client_tel varchar(11)-->
+    <resultMap id="StaffResultMap" type="Staff">
+        <id column="id" property="id"/>
+        <result column="client_name" property="name"/>
+        <result column="client_gender" property="gender"/>
+        <result column="client_id" property="ID"/>
+        <result column="client_type" property="type"/>
+        <result column="client_account" property="account"/>
+        <result column="client_password" property="password"/>
+        <result column="client_tel" property="tel"/>
+
+    </resultMap>
+
     <select id="selectAll" resultType="pojo.User">
         select * from tb_user;
     </select>

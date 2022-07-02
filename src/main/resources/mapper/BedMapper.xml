@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.BedMapper">
-    <select id="selectAll" resultType="pojo.Bed">
-        select * from bedmanage;
-    </select>
+
+    <resultMap id="BedResultMap" type="Bed">
+        <id column="id" property="id"/>
+        <result column="roomid" property="roomId"/>
+        <result column="buildingid" property="buildingId"/>
+        <result column="isavailable" property="isAvailable"/>
+        <result column="userid" property="userId"/>
+    </resultMap>
+
 
 
 </mapper>

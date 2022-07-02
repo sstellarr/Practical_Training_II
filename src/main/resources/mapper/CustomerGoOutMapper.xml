@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CustomerGoOutMapper">
+
+<!--    id int primary key auto_increment,
+outgoingreason varchar(20),
+outgoingtime varchar(20),
+expectedreturntime varchar(20),
+actualreturntime varchar(20),
+escort varchar(20),
+escorttel varchar(20),
+outgoing_id int,
+CONSTRAINT fk_outgoing_user FOREIGN KEY(outgoing_id) REFERENCES customer(id)
+-->
+
+    <resultMap id="CustomerGoOutResultMap" type="CustomerGoOut">
+        <id column="id" property="id"/>
+        <result column="outgoingtime" property="outGoingTime"/>
+        <result column="expectedreturntime" property="expectedReturnTime"/>
+        <result column="actualreturntime" property="actualReturnTime"/>
+        <result column="escort" property="escort"/>
+        <result column="escorttel" property="escortTel"/>
+        <result column="outgoing_id" property="customerId"/>
+    </resultMap>
+
     <select id="selectAll" resultType="pojo.User">
         select * from tb_user;
     </select>

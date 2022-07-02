@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CustomerCheckInMapper">
+<!--id int primary key auto_increment,
+
+bedid int,
+checkindate date,
+expirationdate date,
+attention varchar(20),
+checkin_id int unique,
+CONSTRAINT fk_checkin_user FOREIGN KEY(checkin_id) REFERENCES customer(id)-->
+    <resultMap id="CustomerCheckInResultMap" type="CustomerCheckIn">
+        <id column="id" property="id"/>
+        <result column="bedin" property="bedId"/>
+        <result column="checkindate" property="checkInDate"/>
+        <result column="expirationdate" property="expirationDate"/>
+        <result column="attenrion" property="attention"/>
+        <result column="checkin_id" property="customerId"/>
+    </resultMap>
+
     <select id="selectAll" resultType="pojo.User">
         select * from tb_user;
     </select>

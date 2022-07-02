@@ -13,6 +13,11 @@ import java.util.List;
  */
 
 public interface StaffMapper {
+
+    @Select("select * from staff")
+    List<Staff> selectAll();
+
+
     /**
      * 根据用户名和密码查询用户对象
      * @param username

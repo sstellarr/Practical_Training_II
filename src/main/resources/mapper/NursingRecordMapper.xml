@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.NursingRecordMapper">
+<!--    create table nursingrecord(
+id int primary key auto_increment ,
+content varchar(200),
+startdate date,
+enddate date,
+record_userid int unique,
+record_levelid int,
+CONSTRAINT fk_record_user FOREIGN KEY(record_userid) REFERENCES customer(id),
+CONSTRAINT fk_record_level FOREIGN KEY(record_levelid) REFERENCES nursinglevel(id)-->
+    <resultMap id="NursingRecordResultMap" type="NursingRecord">
+        <id column="id" property="id"/>
+        <result column="content" property="content"/>
+        <result column="startdate" property="start"/>
+        <result column="enddate" property="end"/>
+        <result column="record_userid" property="userId"/>
+        <result column="record_levelid" property="levelId"/>
+    </resultMap>
     <select id="selectAll" resultType="pojo.User">
         select * from tb_user;
     </select>

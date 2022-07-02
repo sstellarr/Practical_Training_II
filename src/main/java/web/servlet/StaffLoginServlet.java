@@ -1,11 +1,13 @@
-package web.response;
+package web.servlet;
 
 import mapper.AdministratorMapper;
+import mapper.StaffMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import pojo.Administrator;
+import pojo.Staff;
+import util.SqlSessionFactoryUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +21,7 @@ import java.util.List;
 
 //TODO
 @WebServlet("")
-public class AdminLoginServlet extends HttpServlet {
+public class StaffLoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //1.接受用户名和密码
@@ -27,14 +29,11 @@ public class AdminLoginServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         //2.查询
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-
+        SqlSessionFactory sqlSessionFactory= SqlSessionFactoryUtils.getSqlSessionFactory();
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
-        AdministratorMapper administratorMapper = sqlSession.getMapper(AdministratorMapper.class);
-        List<Administrator> admin = administratorMapper.select(username, password);
+        StaffMapper staffMapper = sqlSession.getMapper(StaffMapper.class);
+        List<Staff> staff = staffMapper.select(username, password);
 
         sqlSession.close();
 
@@ -42,19 +41,20 @@ public class AdminLoginServlet extends HttpServlet {
         resp.setContentType("text/html;charset=utf-8");
         PrintWriter writer=resp.getWriter();
         //判断是否为null
-        if(admin!=null){
+        if(staff!=null){
             //登录成功
-            //TODO
+            //TODO:跳到加载品牌商菜单:
+            //TODO:sendRedirect方法
             writer.write("登录成功");
         }else{
             //登录失败
-            //TODO
             writer.write("登录失败");
         }
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doGet(req, resp);
+        super.doPost(req, resp);
     }
 }

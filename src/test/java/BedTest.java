@@ -3,6 +3,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
 import pojo.Bed;
 import pojo.User;
 
@@ -13,9 +14,10 @@ import java.util.List;
 /**
  * Mybatis 代理开发
  */
-public class MyBatisDemo {
+public class BedTest {
 
-    public static void main(String[] args) throws IOException {
+    @Test
+    public void testSelectAll() throws IOException {
 
         //1. 加载mybatis的核心配置文件，获取 SqlSessionFactory
         String resource = "mybatis-config.xml";

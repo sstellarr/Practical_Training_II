@@ -1,5 +1,10 @@
 package mapper;
 
+import org.apache.ibatis.annotations.Select;
+import pojo.FoodRecord;
+
+import java.util.List;
+
 /**
  * 膳食记录：
  * 增删查改
@@ -7,4 +12,7 @@ package mapper;
  */
 
 public interface FoodRecordMapper {
+
+    @Select("select * from foodrecord")
+    List<FoodRecord> selectAll();
 }
