@@ -1,10 +1,8 @@
 package service.impl;
 
-import mapper.NursingRecordMapper;
 import mapper.StaffMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import pojo.NursingRecord;
 import pojo.Staff;
 import service.StaffService;
 import util.SqlSessionFactoryUtils;
@@ -68,10 +66,10 @@ public class StaffServiceImpl implements StaffService {
     }
 
     @Override
-    public List<Staff> selectById(Integer id) {
+    public Staff selectById(Integer id) {
         SqlSession sqlSession=factory.openSession();
         StaffMapper mapper = sqlSession.getMapper(StaffMapper.class);
-        List<Staff> staff = mapper.selectById(id);
+        Staff staff = mapper.selectById(id);
         sqlSession.close();
         return staff;
     }

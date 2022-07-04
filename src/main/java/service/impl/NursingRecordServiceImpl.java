@@ -1,11 +1,8 @@
 package service.impl;
 
-import mapper.FoodRecordMapper;
-import mapper.NursingLevelMapper;
 import mapper.NursingRecordMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import pojo.NursingLevel;
 import pojo.NursingRecord;
 import service.NursingRecordService;
 import util.SqlSessionFactoryUtils;
@@ -60,11 +57,11 @@ public class NursingRecordServiceImpl implements NursingRecordService {
     }
 
     @Override
-    public List<NursingRecord> selectById(Integer id) {
+    public NursingRecord selectById(Integer id) {
         SqlSession sqlSession=factory.openSession();
         NursingRecordMapper mapper = sqlSession.getMapper(NursingRecordMapper.class);
-        List<NursingRecord> nursingLevels = mapper.selectById(id);
+        NursingRecord nursingRecord = mapper.selectById(id);
         sqlSession.close();
-        return nursingLevels;
+        return nursingRecord;
     }
 }

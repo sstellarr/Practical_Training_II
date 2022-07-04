@@ -1,11 +1,9 @@
 package service.impl;
 
 import mapper.AdministratorMapper;
-import mapper.BedMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Administrator;
-import pojo.Bed;
 import service.AdministratorService;
 import util.SqlSessionFactoryUtils;
 

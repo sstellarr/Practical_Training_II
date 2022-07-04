@@ -1,7 +1,6 @@
 package service;
 
 import pojo.Customer;
-import pojo.CustomerGoOut;
 
 import java.util.List;
 
@@ -14,6 +13,6 @@ public interface CustomerService {
     void deleteById(Integer id);
 
     void update(Customer customer);
-    List<Customer> selectById(Integer id);
+    Customer selectById(Integer id);
 
 }

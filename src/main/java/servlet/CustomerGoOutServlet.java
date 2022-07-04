@@ -17,7 +17,8 @@ public class CustomerGoOutServlet extends BaseServlet{
 
     public void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<CustomerGoOut> customerGoOuts = customerGoOutService.selectAll();
-        //TODO
+        req.setAttribute("customerGoOuts",customerGoOuts);
+        req.getRequestDispatcher("/queryCustomerGoOut.jsp").forward(req,resp);
     }
 
     public void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,13 +34,15 @@ public class CustomerGoOutServlet extends BaseServlet{
                 new CustomerGoOut(outGoingReason,outGoingTime,expectedReturnTime,actualReturnTime,escort,escortTel,Integer.parseInt(customerId));
         customerGoOutService.add(customerGoOut);
 
+        req.getRequestDispatcher("/CustomerGoOut/selectAll").forward(req,resp);
+
     }
 
 
     public void deleteById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id=req.getParameter("id");
         customerGoOutService.deleteById(Integer.parseInt(id));
-
+        req.getRequestDispatcher("/CustomerGoOut/selectAll").forward(req,resp);
     }
 
     public void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -55,6 +58,15 @@ public class CustomerGoOutServlet extends BaseServlet{
         CustomerGoOut customerGoOut=
                 new CustomerGoOut(Integer.parseInt(id),outGoingReason,outGoingTime,expectedReturnTime,actualReturnTime,escort,escortTel,Integer.parseInt(customerId));
         customerGoOutService.update(customerGoOut);
-    }
 
+        req.getRequestDispatcher("/CustomerGoOut/selectAll").forward(req,resp);
+
+    }
+    public void selectById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        CustomerGoOut customerGoOut = customerGoOutService.selectById(Integer.parseInt(id));
+        req.setAttribute("customerGoOut", customerGoOut);
+        req.getRequestDispatcher("updateCustomerGoOut").forward(req,resp);
+
+    }
 }

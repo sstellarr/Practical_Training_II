@@ -22,7 +22,6 @@
     </resultMap>
 
     <insert id="add">
-<!--        @Insert("insert into checkinrecord values(null,#{bedId},#{checkInDate},,#{expirationDate},,#{attention},,null)")-->
         insert into checkinrecord (bedid, checkindate, expirationdate, attention, checkin_id)
         values(#{bedId},#{checkInDate},,#{expirationDate},,#{attention},#{customerId});
     </insert>

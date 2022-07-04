@@ -1,6 +1,5 @@
 package service;
 
-import org.apache.ibatis.annotations.Param;
 import pojo.Staff;
 
 import java.util.List;
@@ -16,5 +15,5 @@ public interface StaffService {
 
     void update(Staff staff);
 
-    List<Staff> selectById(Integer id);
+    Staff selectById(Integer id);
 }

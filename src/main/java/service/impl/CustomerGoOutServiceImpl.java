@@ -1,10 +1,8 @@
 package service.impl;
 
-import mapper.CustomerCheckOutMapper;
 import mapper.CustomerGoOutMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import pojo.CustomerCheckOut;
 import pojo.CustomerGoOut;
 import service.CustomerGoOutService;
 import util.SqlSessionFactoryUtils;
@@ -62,11 +60,11 @@ public class CustomerGoOutServiceImpl implements CustomerGoOutService {
     }
 
     @Override
-    public List<CustomerGoOut> selectById(Integer id) {
+    public CustomerGoOut selectById(Integer id) {
         SqlSession sqlSession=factory.openSession();
         CustomerGoOutMapper mapper = sqlSession.getMapper(CustomerGoOutMapper.class);
-        List<CustomerGoOut> customerGoOuts = mapper.selectById(id);
+        CustomerGoOut customerGoOut = mapper.selectById(id);
         sqlSession.close();
-        return customerGoOuts;
+        return customerGoOut;
     }
 }

@@ -8,13 +8,13 @@ import java.util.List;
 public interface CustomerCheckInService {
     /**
      * 查询所有
-     * @return
+     * @return 查询结果
      */
     List<CustomerCheckIn> selectAll();
 
     /**
      *
-     * @param customerCheckIn
+     * @param customerCheckIn 添加数据
      */
     void add(CustomerCheckIn customerCheckIn);
 
@@ -22,6 +22,6 @@ public interface CustomerCheckInService {
 
     void update(CustomerCheckIn customerCheckIn);
 
-    List<CustomerCheckIn> selectById(Integer id);
+    CustomerCheckIn selectById(Integer id);
 
 }

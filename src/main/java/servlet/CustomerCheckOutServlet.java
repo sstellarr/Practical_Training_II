@@ -19,7 +19,8 @@ public class CustomerCheckOutServlet extends BaseServlet{
 
     public void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<CustomerCheckOut> customerCheckouts = customerCheckOutService.selectAll();
-        //TODO
+        req.setAttribute("customerCheckouts",customerCheckouts);
+        req.getRequestDispatcher("/queryCustomerCheckout.jsp").forward(req,resp);
 
     }
 
@@ -35,13 +36,15 @@ public class CustomerCheckOutServlet extends BaseServlet{
                 new CustomerCheckOut(Date.valueOf(retreatTime),retreatReason,Date.valueOf(askTime),auditPerson,auditOpinion,Integer.parseInt(retreatId));
         customerCheckOutService.add(customerCheckOut);
 
+        req.getRequestDispatcher("/CustomerCheckout/selectAll").forward(req,resp);
+
     }
 
 
     public void deleteById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id=req.getParameter("id");
         customerCheckOutService.deleteById(Integer.parseInt(id));
-
+        req.getRequestDispatcher("/CustomerCheckout/selectAll").forward(req,resp);
     }
 
     public void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -56,6 +59,18 @@ public class CustomerCheckOutServlet extends BaseServlet{
         CustomerCheckOut customerCheckOut =
                 new CustomerCheckOut(Integer.parseInt(id),Date.valueOf(retreatTime),retreatReason,Date.valueOf(askTime),auditPerson,auditOpinion,Integer.parseInt(retreatId));
         customerCheckOutService.update(customerCheckOut);
+
+        req.getRequestDispatcher("/CustomerCheckout/selectAll").forward(req,resp);
+
     }
+
+    public void selectById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        CustomerCheckOut customerCheckOut = customerCheckOutService.selectById(Integer.parseInt(id));
+        req.setAttribute("customerCheckOut", customerCheckOut);
+        req.getRequestDispatcher("updateCustomerCheckOut").forward(req,resp);
+    }
+
+
 
 }

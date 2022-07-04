@@ -14,10 +14,9 @@ import java.util.List;
 public interface AdministratorMapper {
     /**
      * 根据用户名和密码查询用户对象
-     * @param username
-     * @param password
-     * @return
+     * @param username 用户名
+     * @param password  密码
+     * @return 查询结果
      */
-    @Select("select *  from manager where account=#{username} and password=#{password}")
     List<Administrator> select(@Param("username") String username, @Param("password") String password);
 }

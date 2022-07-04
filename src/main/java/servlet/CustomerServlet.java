@@ -1,7 +1,6 @@
 package servlet;
 
 import pojo.Customer;
-import pojo.CustomerGoOut;
 import service.CustomerService;
 import service.impl.CustomerServiceImpl;
 
@@ -15,11 +14,12 @@ import java.util.List;
 
 @WebServlet("/Customer/*")
 public class CustomerServlet extends BaseServlet{
-    private CustomerService customerServive=new CustomerServiceImpl();
+    private CustomerService customerService =new CustomerServiceImpl();
 
     public void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Customer> customers = customerServive.selectAll();
-        //TODO
+        List<Customer> customers = customerService.selectAll();
+        req.setAttribute("customers",customers);
+        req.getRequestDispatcher("/queryCustomer.jsp").forward(req,resp);
     }
 
     public void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,15 +37,17 @@ public class CustomerServlet extends BaseServlet{
 
         Customer customer =
                 new Customer(name,gender,Integer.parseInt(age),tel,idCardNumber,fileNumber,account,password,Integer.parseInt(height), Date.valueOf(birthday));
-        customerServive.add(customer);
+        customerService.add(customer);
+
+        req.getRequestDispatcher("/Customer/selectAll").forward(req,resp);
 
     }
 
 
     public void deleteById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id=req.getParameter("id");
-        customerServive.deleteById(Integer.parseInt(id));
-
+        customerService.deleteById(Integer.parseInt(id));
+        req.getRequestDispatcher("/Customer/selectAll").forward(req,resp);
     }
 
     public void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -62,10 +64,18 @@ public class CustomerServlet extends BaseServlet{
         String birthday=req.getParameter("birthday");
 
 
-        Customer customer =
-                new Customer(Integer.parseInt(id),name,gender,Integer.parseInt(age),tel,idCardNumber,fileNumber,account,password,Integer.parseInt(height), Date.valueOf(birthday));
-        customerServive.update(customer);
+        Customer customer = new Customer(Integer.parseInt(id),name,gender,Integer.parseInt(age),tel,idCardNumber,fileNumber,account,password,Integer.parseInt(height), Date.valueOf(birthday));
+        customerService.update(customer);
+
+
+        req.getRequestDispatcher("/Customer/selectAll").forward(req,resp);
 
     }
+    public void selectById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        Customer customer = customerService.selectById(Integer.parseInt(id));
+        req.setAttribute("customer", customer);
+        req.getRequestDispatcher("updateCustomer").forward(req,resp);
 
+    }
 }

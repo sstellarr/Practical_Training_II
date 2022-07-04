@@ -1,10 +1,8 @@
 package service.impl;
 
-import mapper.BedMapper;
 import mapper.CustomerCheckInMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import pojo.Bed;
 import pojo.CustomerCheckIn;
 import service.CustomerCheckInService;
 import util.SqlSessionFactoryUtils;
@@ -60,11 +58,11 @@ public class CustomerCheckInServiceImpl implements CustomerCheckInService {
     }
 
     @Override
-    public List<CustomerCheckIn> selectById(Integer id) {
+    public CustomerCheckIn selectById(Integer id) {
         SqlSession sqlSession=factory.openSession();
         CustomerCheckInMapper mapper = sqlSession.getMapper(CustomerCheckInMapper.class);
-        List<CustomerCheckIn> customerCheckIns = mapper.selectById(id);
+        CustomerCheckIn customerCheckIn = mapper.selectById(id);
         sqlSession.close();
-        return customerCheckIns;
+        return customerCheckIn;
     }
 }

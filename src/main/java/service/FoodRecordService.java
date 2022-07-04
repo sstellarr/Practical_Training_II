@@ -1,6 +1,5 @@
 package service;
 
-import pojo.Customer;
 import pojo.FoodRecord;
 
 import java.util.List;
@@ -17,6 +16,6 @@ public interface FoodRecordService {
 
     void selectByFoodId(Integer foodId);
 
-    List<FoodRecord> selectById(Integer id);
+    FoodRecord selectById(Integer id);
 
 }

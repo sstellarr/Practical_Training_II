@@ -13,38 +13,23 @@ import java.util.List;
 
 public interface BedMapper {
 
-    /**
-     * 查询所有
-     * @return
-     */
     @Select("select * from bedmanage")
     @ResultMap("BedResultMap")
     List<Bed> selectAll();
 
-    List<Bed> selectById(Integer id);
     /**
-     * 添加床位
-     * @param bed
+     * 通过ID查询
+     *
+     * @param id 编号
+     * @return 查询结果
      */
+    Bed selectById(Integer id);
+
     void add(Bed bed);
 
-
-    /**
-     * 删除
-     * @param id
-     */
     void deleteById(Integer id);
 
-    /**
-     * 改
-     * @param bed
-     */
     void update(Bed bed);
-
-
-
-
-
 
 
 }

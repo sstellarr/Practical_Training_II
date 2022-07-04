@@ -1,10 +1,8 @@
 package service.impl;
 
-import mapper.CustomerMapper;
 import mapper.FoodRecordMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import pojo.Customer;
 import pojo.FoodRecord;
 import service.FoodRecordService;
 import util.SqlSessionFactoryUtils;
@@ -70,12 +68,12 @@ public class FoodRecordServiceImpl implements FoodRecordService {
     }
 
     @Override
-    public List<FoodRecord> selectById(Integer id) {
+    public FoodRecord selectById(Integer id) {
         SqlSession sqlSession=factory.openSession();
         FoodRecordMapper mapper = sqlSession.getMapper(FoodRecordMapper.class);
-        List<FoodRecord> foodRecords = mapper.selectById(id);
+        FoodRecord foodRecord = mapper.selectById(id);
         sqlSession.close();
-        return foodRecords;
+        return foodRecord;
     }
 
 

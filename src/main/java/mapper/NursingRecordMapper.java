@@ -2,9 +2,7 @@ package mapper;
 
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
-import pojo.CustomerCheckIn;
 import pojo.NursingRecord;
-
 import java.util.List;
 
 /**
@@ -18,7 +16,7 @@ public interface NursingRecordMapper {
     @ResultMap("NursingRecordResultMap")
     List<NursingRecord> selectAll();
 
-    List<NursingRecord> selectById(Integer id);
+    NursingRecord selectById(Integer id);
 
     void add(NursingRecord nursingRecord );
     void deleteById(Integer id);

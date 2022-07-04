@@ -18,7 +18,8 @@ public class FoodRecordServlet extends BaseServlet{
 
     public void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<FoodRecord> foodRecords = foodRecordService.selectAll();
-        //TODO
+        req.setAttribute("foodRecords",foodRecords);
+        req.getRequestDispatcher("/queryFoodRecord.jsp").forward(req,resp);
     }
 
     public void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,13 +30,15 @@ public class FoodRecordServlet extends BaseServlet{
         FoodRecord foodRecord = new FoodRecord(food, Date.valueOf(date), Integer.parseInt(foodId));
         foodRecordService.add(foodRecord);
 
+        req.getRequestDispatcher("/FoodRecord/selectAll").forward(req,resp);
+
     }
 
 
     public void deleteById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id=req.getParameter("id");
         foodRecordService.deleteById(Integer.parseInt(id));
-
+        req.getRequestDispatcher("/FoodRecord/selectAll").forward(req,resp);
     }
 
     public void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,6 +50,14 @@ public class FoodRecordServlet extends BaseServlet{
         FoodRecord foodRecord = new FoodRecord(Integer.parseInt(id),food, Date.valueOf(date), Integer.parseInt(foodId));
         foodRecordService.update(foodRecord);
 
-    }
+        req.getRequestDispatcher("/FoodRecord/selectAll").forward(req,resp);
 
+    }
+    public void selectById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        FoodRecord foodRecord = foodRecordService.selectById(Integer.parseInt(id));
+        req.setAttribute("foodRecord", foodRecord);
+        req.getRequestDispatcher("updateFoodRecord").forward(req,resp);
+
+    }
 }

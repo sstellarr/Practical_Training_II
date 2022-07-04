@@ -59,11 +59,11 @@ public class BedServiceImpl implements BedService {
     }
 
     @Override
-    public List<Bed> selectById(Integer id) {
+    public Bed selectById(Integer id) {
         SqlSession sqlSession=factory.openSession();
         BedMapper mapper = sqlSession.getMapper(BedMapper.class);
-        List<Bed> beds = mapper.selectById(id);
+        Bed bed = mapper.selectById(id);
         sqlSession.close();
-        return beds;
+        return bed;
     }
 }

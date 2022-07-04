@@ -1,6 +1,5 @@
 package service;
 
-import pojo.FoodRecord;
 import pojo.NursingLevel;
 
 import java.util.List;
@@ -15,6 +14,6 @@ public interface NursingLevelService {
 
     void update(NursingLevel nursingLevel);
 
-    List<NursingLevel> selectById(Integer id);
+    NursingLevel selectById(Integer id);
 
 }

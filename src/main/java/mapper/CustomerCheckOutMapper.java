@@ -2,10 +2,7 @@ package mapper;
 
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
-import pojo.CustomerCheckIn;
 import pojo.CustomerCheckOut;
-import pojo.CustomerGoOut;
-
 import java.util.List;
 
 /**
@@ -19,7 +16,7 @@ public interface CustomerCheckOutMapper {
     @ResultMap("CustomerCheckOutResultMap")
     List<CustomerCheckOut> selectAll();
 
-    List<CustomerCheckOut> selectById(Integer id);
+    CustomerCheckOut selectById(Integer id);
 
     void add(CustomerCheckOut customerCheckOut );
 

@@ -1,14 +1,8 @@
 package servlet;
 
-import mapper.StaffMapper;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Staff;
-import service.BedService;
 import service.StaffService;
-import service.impl.BedServiceImpl;
 import service.impl.StaffServiceImpl;
-import util.SqlSessionFactoryUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,16 +39,19 @@ public class StaffServlet extends BaseServlet{
             //登录成功
             //TODO:跳到index1.html
             //TODO:sendRedirect方法
-            writer.write("登录成功");
+//            req.getRequestDispatcher("/succeed.jsp").forward(req, resp);
+            resp.sendRedirect("/login.jsp");    //TODO
         }else{
             //登录失败
-            writer.write("登录失败");
+//            writer.write("登录失败");
+            resp.sendRedirect("/login.jsp");    //TODO
         }
     }
 
     public void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Staff> staff = staffService.selectAll();
-        //TODO
+        req.setAttribute("staff",staff);
+        req.getRequestDispatcher("/queryStaff.jsp").forward(req,resp);
     }
 
     public void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -70,13 +67,16 @@ public class StaffServlet extends BaseServlet{
 
         Staff staff = new Staff(name, gender, staffId, type, account, password, tel, relation);
         staffService.add(staff);
+
+        req.getRequestDispatcher("/Staff/selectAll").forward(req,resp);
+
     }
 
 
     public void deleteById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id=req.getParameter("id");
         staffService.deleteById(Integer.parseInt(id));
-
+        req.getRequestDispatcher("/Staff/selectAll").forward(req,resp);
     }
 
     public void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -93,6 +93,15 @@ public class StaffServlet extends BaseServlet{
         Staff staff = new Staff(Integer.parseInt(id),name, gender, staffId, type, account, password, tel, relation);
         staffService.update(staff);
 
-    }
+        req.getRequestDispatcher("/Staff/selectAll").forward(req,resp);
 
+
+    }
+    public void selectById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        Staff staff = staffService.selectById(Integer.parseInt(id));
+        req.setAttribute("staff", staff);
+        req.getRequestDispatcher("updateStaff").forward(req,resp);
+
+    }
 }

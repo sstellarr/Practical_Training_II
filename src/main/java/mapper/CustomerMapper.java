@@ -3,15 +3,11 @@ package mapper;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import pojo.Customer;
-import pojo.CustomerCheckIn;
-
 import java.util.List;
 
 /**
  * 客户：
  * - 登录->查询用户名和密码（双条件查询）
- * -
- * -
  */
 public interface CustomerMapper {
 
@@ -19,7 +15,7 @@ public interface CustomerMapper {
     @ResultMap("CustomerResultMap")
     List<Customer> selectAll();
 
-    List<Customer> selectById(Integer id);
+    Customer selectById(Integer id);
 
     void add(Customer customer );
     void deleteById(Integer id);

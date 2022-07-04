@@ -1,6 +1,5 @@
 package service;
 
-import pojo.NursingLevel;
 import pojo.NursingRecord;
 
 import java.util.List;
@@ -15,6 +14,6 @@ public interface NursingRecordService {
 
     void update(NursingRecord nursingRecord);
 
-    List<NursingRecord> selectById(Integer id);
+    NursingRecord selectById(Integer id);
 
 }

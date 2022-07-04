@@ -19,9 +19,8 @@
         <result column="userid" property="userId"/>
     </resultMap>
     <insert id="add">
-<!--        insert into bedmanage values(null,#{roomId},#{buildingId,#{isAvailable},null)-->
-        insert into bedmanage (roomid, buildingid, isavaiblable)
-        values(#{roomId}, #{buildingId}, #{isAvailable} );
+        insert into bedmanage (roomid, buildingid, isavaiblable,userid)
+        values(#{roomId}, #{buildingId}, #{isAvailable}, #{userId});
     </insert>
     <update id="update">
         update bedmanage

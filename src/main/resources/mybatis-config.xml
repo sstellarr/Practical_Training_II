@@ -19,7 +19,7 @@
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <!--注意连接的数据库名称-->
                 <property name="url" value="jdbc:mysql:///yytn?useSSL=false&amp;useServerPrepStmts=true"/>
-<!--                TODO-->
+<!--                注意配置信息-->
                 <property name="username" value="root"/>
                 <property name="password" value="1234"/>
             </dataSource>
@@ -31,7 +31,6 @@
 <!--                &lt;!&ndash;数据库连接信息&ndash;&gt;-->
 <!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
 <!--                <property name="url" value="jdbc:mysql:///mybatis?useSSL=false"/>-->
-<!--&lt;!&ndash;                TODO&ndash;&gt;-->
 <!--                <property name="username" value="root"/>-->
 <!--                <property name="password" value="1234"/>-->
 <!--            </dataSource>-->

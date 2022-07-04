@@ -24,10 +24,11 @@ public class Bed {
     public Bed() {
     }
 
-    public Bed(Integer roomId, Integer buildingId, String isAvailable) {
+    public Bed(Integer roomId, Integer buildingId, String isAvailable, Integer userId) {
         this.roomId = roomId;
         this.buildingId = buildingId;
         this.isAvailable = isAvailable;
+        this.userId = userId;
     }
 
     public Bed(Integer id, Integer roomId, Integer buildingId, String isAvailable, Integer userId) {

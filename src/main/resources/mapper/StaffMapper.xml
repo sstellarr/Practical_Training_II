@@ -49,6 +49,9 @@
     <select id="selectById" resultType="pojo.Staff">
         select * from staff where id=#{id};
     </select>
+    <select id="select" resultType="pojo.Staff">
+        select *  from staff where account=#{username} and password=#{password};
+    </select>
 
 
 </mapper>

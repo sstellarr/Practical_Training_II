@@ -8,13 +8,13 @@ public interface BedService {
 
     /**
      * 查询所有
-     * @return
+     * @return 查询结果
      */
     List<Bed> selectAll();
 
     /**
      * 添加床位
-     * @param bed
+     * @param bed 添加信息
      */
     void add(Bed bed);
 
@@ -22,7 +22,7 @@ public interface BedService {
 
     void update(Bed bed);
 
-    List<Bed> selectById(Integer id);
+    Bed selectById(Integer id);
 
 
 

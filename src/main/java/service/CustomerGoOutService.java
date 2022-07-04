@@ -1,6 +1,5 @@
 package service;
 
-import pojo.CustomerCheckOut;
 import pojo.CustomerGoOut;
 
 import java.util.List;
@@ -15,6 +14,6 @@ public interface CustomerGoOutService {
 
     void update(CustomerGoOut customerGoOut);
 
-    List<CustomerGoOut> selectById(Integer id);
+    CustomerGoOut selectById(Integer id);
 
 }

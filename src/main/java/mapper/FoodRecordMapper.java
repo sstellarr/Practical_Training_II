@@ -2,15 +2,12 @@ package mapper;
 
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
-import pojo.CustomerCheckIn;
 import pojo.FoodRecord;
-
 import java.util.List;
 
 /**
  * 膳食记录：
  * 增删查改
- * TODO：根据老人的膳食记录信息显示膳食日历
  */
 
 public interface FoodRecordMapper {
@@ -19,7 +16,7 @@ public interface FoodRecordMapper {
     @ResultMap("FoodRecordResultMap")
     List<FoodRecord> selectAll();
 
-    List<FoodRecord> selectById(Integer id);
+    FoodRecord selectById(Integer id);
 
     void add(FoodRecord foodRecord );
     void deleteById(Integer id);
@@ -28,7 +25,7 @@ public interface FoodRecordMapper {
 
     /**
      * 查某个客户的所有膳食记录
-     * @param foodId
+     * @param foodId 要查询的用户的id
      */
     void selectByFoodId(Integer foodId);
 

@@ -1,10 +1,8 @@
 package service.impl;
 
-import mapper.CustomerCheckInMapper;
 import mapper.CustomerCheckOutMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import pojo.CustomerCheckIn;
 import pojo.CustomerCheckOut;
 import service.CustomerCheckOutService;
 import util.SqlSessionFactoryUtils;
@@ -59,11 +57,11 @@ public class CustomerCheckOutServiceImpl implements CustomerCheckOutService {
     }
 
     @Override
-    public List<CustomerCheckOut> selectById(Integer id) {
+    public CustomerCheckOut selectById(Integer id) {
         SqlSession sqlSession=factory.openSession();
         CustomerCheckOutMapper mapper = sqlSession.getMapper(CustomerCheckOutMapper.class);
-        List<CustomerCheckOut> customerCheckOuts = mapper.selectById(id);
+        CustomerCheckOut customerCheckOut = mapper.selectById(id);
         sqlSession.close();
-        return customerCheckOuts;
+        return customerCheckOut;
     }
 }
