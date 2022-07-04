@@ -23,4 +23,11 @@ public interface FoodRecordMapper {
     void deleteById(Integer id);
 
     void update(FoodRecord foodRecord);
+
+    /**
+     * 查某个客户的所有膳食记录
+     * @param foodId
+     */
+    void selectByFoodId(Integer foodId);
+
 }

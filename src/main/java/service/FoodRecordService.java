@@ -15,4 +15,6 @@ public interface FoodRecordService {
 
     void update(FoodRecord foodRecord);
 
+    void selectByFoodId(Integer foodId);
+
 }

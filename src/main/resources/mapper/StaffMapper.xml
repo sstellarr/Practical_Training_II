@@ -12,32 +12,34 @@
 <!--    client_account varchar(20),-->
 <!--    client_password varchar(20),-->
 <!--    client_tel varchar(11)-->
+<!--    client_relation varchar(20)-->
 <!--    );-->
-
     <resultMap id="StaffResultMap" type="Staff">
         <id column="id" property="id"/>
         <result column="client_name" property="name"/>
         <result column="client_gender" property="gender"/>
-        <result column="client_id" property="ID"/>
+        <result column="client_id" property="staffId"/>
         <result column="client_type" property="type"/>
         <result column="client_account" property="account"/>
         <result column="client_password" property="password"/>
         <result column="client_tel" property="tel"/>
+        <result column="client_relation" property="relation"/>
 
     </resultMap>
     <insert id="add">
-        insert into retreatrecord (client_name, client_gender, client_id, client_type, client_account, client_password, client_tel)
-        values(#{name},#{gender},#{ID},#{type},#{account},#{password},#{tel});
+        insert into retreatrecord (client_name, client_gender, client_id, client_type, client_account, client_password, client_tel,client_relation)
+        values(#{name},#{gender},#{staffId},#{type},#{account},#{password},#{tel},#{relation});
     </insert>
     <update id="update">
         set
             client_name=#{name},
             client_gender=#{gender},
-            client_id=#{ID},
+            client_id=#{staffId},
             client_type=#{type},
             client_account=#{account},
             client_password=#{password},
-            client_tel=#{tel}
+            client_tel=#{tel},
+            client_relation=#{relation}
         where id=#{id};
     </update>
     <delete id="deleteById">

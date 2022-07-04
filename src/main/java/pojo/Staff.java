@@ -14,6 +14,7 @@ client_type char(2),
 client_account varchar(20),
 client_password varchar(20),
 client_tel varchar(11)
+client_relation varchar(20)
 );
  */
 
@@ -21,11 +22,13 @@ public class  Staff{
     private Integer id;
     private String name; //员工名称
     private String gender;  //性别
-    private String ID;   //员工ID
+    private String staffId;   //员工ID
     private String type;    //种类
     private String account; //用户名
     private String password;    //密码
     private String tel;  //电话号码
+
+    private String relation; //与客户的关系；服务对象
 
     public Integer getId() {
         return id;
@@ -51,12 +54,12 @@ public class  Staff{
         this.gender = gender;
     }
 
-    public String getID() {
-        return ID;
+    public String getStaffId() {
+        return staffId;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setStaffId(String staffId) {
+        this.staffId = staffId;
     }
 
     public String getType() {
@@ -91,17 +94,26 @@ public class  Staff{
         this.tel = tel;
     }
 
+    public String getRelation() {
+        return relation;
+    }
+
+    public void setRelation(String relation) {
+        this.relation = relation;
+    }
+
     @Override
     public String toString() {
         return "Staff{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
-                ", ID='" + ID + '\'' +
+                ", staffId='" + staffId + '\'' +
                 ", type='" + type + '\'' +
                 ", account='" + account + '\'' +
                 ", password='" + password + '\'' +
                 ", tel='" + tel + '\'' +
+                ", relation='" + relation + '\'' +
                 '}';
     }
 }
