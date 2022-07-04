@@ -29,4 +29,7 @@ public interface StaffMapper {
     @Select("select *  from staff where account=#{username} and password=#{password}")
     List<Staff> select(@Param("username") String username, @Param("password") String password);
 
+    void deleteById(Integer id);
+
+    void update(Staff staff);
 }

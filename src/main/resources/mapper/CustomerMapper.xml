@@ -2,18 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CustomerMapper">
 
-<!--    create TABLE customer(
-id int primary key auto_increment,
-name varchar(15),
-gender char(1),
-age int,
-tel varchar(20),
-idcardnumber varchar(20),
-filenumber varchar(20),
-account varchar(20),
-password varchar(20),
-height int,
-birthday date-->
+<!--    create TABLE customer(-->
+<!--    id int primary key auto_increment,-->
+<!--    name varchar(15),-->
+<!--    gender char(1),-->
+<!--    age int,-->
+<!--    tel varchar(20),-->
+<!--    idcardnumber varchar(20),-->
+<!--    filenumber varchar(20),-->
+<!--    account varchar(20),-->
+<!--    password varchar(20),-->
+<!--    height int,-->
+<!--    birthday date-->
+<!--    );-->
     <resultMap id="CustomerResultMap=" type="Customer">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
@@ -27,6 +28,24 @@ birthday date-->
         <result column="height" property="height"/>
         <result column="birthday" property="birthday"/>
     </resultMap>
+    <update id="update">
+        set
+            name=#{name},
+            gender=#{gender},
+            age=#{age},
+            tel=#{tel},
+            idcardnumber=#{idCardNumber},
+            filenumber=#{fileNumber},
+            account=#{account},
+            password=#{password},
+            height=#{height},
+            birthday=#{birthday}
+        where if=#{id};
+    </update>
+
+    <delete id="deleteById">
+        delete from customer where id=#{id};
+    </delete>
 
 
 </mapper>

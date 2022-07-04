@@ -17,4 +17,8 @@ public interface FoodRecordMapper {
     @Select("select * from foodrecord")
     @ResultMap("FoodRecordResultMap")
     List<FoodRecord> selectAll();
+
+    void deleteById(Integer id);
+
+    void update(FoodRecord foodRecord);
 }

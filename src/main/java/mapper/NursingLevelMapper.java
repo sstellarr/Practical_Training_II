@@ -16,4 +16,8 @@ public interface NursingLevelMapper {
     @Select("select * from nursinglevel")
     @ResultMap("NursingLevelResultMap")
     List<NursingLevel> selectAll();
+
+    void deleteById(Integer id);
+
+    void update(NursingLevel nursingLevel);
 }

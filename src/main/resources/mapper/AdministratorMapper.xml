@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--        create table manager(-->
+<!--        id int primary key auto_increment,-->
+<!--        account varchar(20),-->
+<!--        password varchar(20));-->
+
+
 <mapper namespace="mapper.AdministratorMapper">
     <resultMap id="AdministratorResultMap" type="Administrator">
         <id column="id" property="id"/>

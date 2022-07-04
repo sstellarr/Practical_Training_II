@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CustomerCheckInMapper">
-<!--id int primary key auto_increment,
 
-bedid int,
-checkindate date,
-expirationdate date,
-attention varchar(20),
-checkin_id int unique,
-CONSTRAINT fk_checkin_user FOREIGN KEY(checkin_id) REFERENCES customer(id)-->
+<!--    create table checkinrecord(-->
+<!--    id int primary key auto_increment,-->
+<!--    bedid int,-->
+<!--    checkindate date,-->
+<!--    expirationdate date,-->
+<!--    attention varchar(20),-->
+<!--    checkin_id int unique,-->
+<!--    CONSTRAINT fk_checkin_user FOREIGN KEY(checkin_id) REFERENCES customer(id)-->
+<!--    );-->
+
     <resultMap id="CustomerCheckInResultMap" type="CustomerCheckIn">
         <id column="id" property="id"/>
         <result column="bedin" property="bedId"/>
@@ -17,6 +20,29 @@ CONSTRAINT fk_checkin_user FOREIGN KEY(checkin_id) REFERENCES customer(id)-->
         <result column="attenrion" property="attention"/>
         <result column="checkin_id" property="customerId"/>
     </resultMap>
+
+    <insert id="add">
+<!--        @Insert("insert into checkinrecord values(null,#{bedId},#{checkInDate},,#{expirationDate},,#{attention},,null)")-->
+        insert into checkinrecord (bedid, checkindate, expirationdate, attention, checkin_id)
+        values(#{bedId},#{checkInDate},,#{expirationDate},,#{attention},#{customerId});
+    </insert>
+
+    <update id="update">
+        set
+            bedid=#{bedId},
+            checkindate=#{checkInDate},
+            expirationdate=#{expirationDate},
+            attention=#{attention},
+            checkin_id=#{customerId}
+        where id=#{id};
+    </update>
+
+
+    <delete id="deleteById">
+        delete from checkinrecord where id=#{id};
+    </delete>
+
+
 
 
 </mapper>

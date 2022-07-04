@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.StaffMapper">
-<!--    create table staff(
-id int primary key auto_increment,
-client_name varchar(15),
-client_gender char(1),
-client_id varchar(15),
-client_type char(2),
-client_account varchar(20),
-client_password varchar(20),
-client_tel varchar(11)-->
+
+
+<!--    create table staff(-->
+<!--    id int primary key auto_increment,-->
+<!--    client_name varchar(15),-->
+<!--    client_gender char(1),-->
+<!--    client_id varchar(15),-->
+<!--    client_type char(2),-->
+<!--    client_account varchar(20),-->
+<!--    client_password varchar(20),-->
+<!--    client_tel varchar(11)-->
+<!--    );-->
+
     <resultMap id="StaffResultMap" type="Staff">
         <id column="id" property="id"/>
         <result column="client_name" property="name"/>
@@ -21,6 +25,20 @@ client_tel varchar(11)-->
         <result column="client_tel" property="tel"/>
 
     </resultMap>
+    <update id="update">
+        set
+            client_name=#{name},
+            client_gender=#{gender},
+            client_id=#{ID},
+            client_type=#{type},
+            client_account=#{account},
+            client_password=#{password},
+            client_tel=#{tel}
+        where id=#{id};
+    </update>
+    <delete id="deleteById">
+        delete from staff where id=#{id};
+    </delete>
 
 
 </mapper>

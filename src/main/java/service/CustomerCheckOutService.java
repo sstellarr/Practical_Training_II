@@ -1,6 +1,5 @@
 package service;
 
-import pojo.CustomerCheckIn;
 import pojo.CustomerCheckOut;
 
 import java.util.List;

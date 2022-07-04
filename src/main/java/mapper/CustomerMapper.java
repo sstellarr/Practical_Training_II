@@ -17,4 +17,8 @@ public interface CustomerMapper {
     @Select("select  * from customer")
     @ResultMap("CustomerResultMap")
     List<Customer> selectAll();
+
+    void deleteById(Integer id);
+
+    void update(Customer customer);
 }

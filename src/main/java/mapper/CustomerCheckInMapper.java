@@ -21,8 +21,11 @@ public interface CustomerCheckInMapper {
     @ResultMap("CustomerCheckInResultMap")
     List<CustomerCheckIn> selectAll();
 
-    @Insert("insert into checkinrecord values(null,#{bedId},#{checkInDate},,#{expirationDate},,#{attention},,null)")
     void add(CustomerCheckIn customerCheckIn );
+
+    void deleteById(Integer id);
+
+    void update(CustomerCheckIn customerCheckIn);
 
 
 }

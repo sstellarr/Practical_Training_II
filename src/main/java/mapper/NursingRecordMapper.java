@@ -17,4 +17,8 @@ public interface NursingRecordMapper {
     @ResultMap("NursingRecordResultMap")
     List<NursingRecord> selectAll();
 
+    void deleteById(Integer id);
+
+    void update(NursingRecord nursingRecord);
+
 }

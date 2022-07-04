@@ -2,16 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CustomerGoOutMapper">
 
-<!--    id int primary key auto_increment,
-outgoingreason varchar(20),
-outgoingtime varchar(20),
-expectedreturntime varchar(20),
-actualreturntime varchar(20),
-escort varchar(20),
-escorttel varchar(20),
-outgoing_id int,
-CONSTRAINT fk_outgoing_user FOREIGN KEY(outgoing_id) REFERENCES customer(id)
--->
+
+<!--    create table outgoing(-->
+<!--    id int primary key auto_increment,-->
+<!--    outgoingreason varchar(20),-->
+<!--    outgoingtime varchar(20),-->
+<!--    expectedreturntime varchar(20),-->
+<!--    actualreturntime varchar(20),-->
+<!--    escort varchar(20),-->
+<!--    escorttel varchar(20),-->
+<!--    outgoing_id int,-->
+<!--    CONSTRAINT fk_outgoing_user FOREIGN KEY(outgoing_id) REFERENCES customer(id)-->
+<!--    );-->
 
     <resultMap id="CustomerGoOutResultMap" type="CustomerGoOut">
         <id column="id" property="id"/>
@@ -22,6 +24,19 @@ CONSTRAINT fk_outgoing_user FOREIGN KEY(outgoing_id) REFERENCES customer(id)
         <result column="escorttel" property="escortTel"/>
         <result column="outgoing_id" property="customerId"/>
     </resultMap>
+    <update id="update">
+        set
+            outgoingtime=#{outGoingTime},
+            expectedreturntime=#{expectedReturnTime},
+            actualreturntime=#{actualReturnTime},
+            escort=#{escort},
+            escorttel=#{escortTel},
+            outgoing_id=#{customerId}
+        where id={id};
+    </update>
+    <delete id="deleteById">
+        delete from outgoing where id=#{id};
+    </delete>
 
 
 </mapper>

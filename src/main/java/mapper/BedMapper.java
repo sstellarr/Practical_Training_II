@@ -1,6 +1,5 @@
 package mapper;
 
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import pojo.Bed;
@@ -26,8 +25,35 @@ public interface BedMapper {
      * 添加床位
      * @param bed
      */
-    @Insert("insert into bedmanage values(null,#{roomId},#{buildingId,#{isAvailable},null)")
     void add(Bed bed);
+
+
+    /**
+     * 删除
+     * @param id
+     */
+    void deleteById(Integer id);
+
+    /**
+     * 改
+     * @param bed
+     */
+    void update(Bed bed);
+
+
+    /*
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(BedInfo record);
+
+    BedInfo selectByPrimaryKey(Integer id);
+
+    List<BedInfo> selectAll(BedInfo bedInfo);
+
+    int updateByPrimaryKey(BedInfo record);
+
+    List<BedInfo> selectByState(BedInfo bedInfo);
+     */
 
 
 

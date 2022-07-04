@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CustomerCheckOutMapper">
-<!--
-id  int primary key auto_increment,
-retreattime date,
 
-retreatreason varchar(20),
-asktime date,
-auditperson varchar(20),
-auditopinion varchar(20),
-retreat_id int unique,
-CONSTRAINT fk_retreat_user FOREIGN KEY(retreat_id) REFERENCES customer(id)
-);-->
+<!--    create table retreatrecord(-->
+<!--    id  int primary key auto_increment,-->
+<!--    retreattime date,-->
+<!--    retreatreason varchar(20),-->
+<!--    asktime date,-->
+<!--    auditperson varchar(20),-->
+<!--    auditopinion varchar(20),-->
+<!--    retreat_id int unique,-->
+<!--    CONSTRAINT fk_retreat_user FOREIGN KEY(retreat_id) REFERENCES customer(id)-->
+<!--    );-->
+
     <resultMap id="CustomerCheckOutResultMap" type="CustomerCheckOut">
         <id column="id" property="id"/>
         <result column="retreattime" property="retreatTime"/>
@@ -21,6 +22,20 @@ CONSTRAINT fk_retreat_user FOREIGN KEY(retreat_id) REFERENCES customer(id)
         <result column="auditopinion" property="auditOpinion"/>
         <result column="retreat_id" property="retreatId"/>
     </resultMap>
+
+    <update id="update">
+        set
+            retreattime=#{retreatTime},
+            retreatreason=#{retreatReason},
+            asktime=#{askTime},
+            auditperson=#{auditPerson},
+            auditopinion=#{auditOpinion},
+            retreat_id=#{retreatId}
+        where if=#{id};
+    </update>
+    <delete id="deleteById">
+        delete from retreatrecord where id=#{id};
+    </delete>
 
 
 </mapper>
