@@ -10,4 +10,9 @@ public interface NursingLevelService {
 
 
     void add(NursingLevel nursingLevel);
+
+    void deleteById(Integer id);
+
+    void update(NursingLevel nursingLevel);
+
 }

@@ -25,6 +25,10 @@
         <result column="client_tel" property="tel"/>
 
     </resultMap>
+    <insert id="add">
+        insert into retreatrecord (client_name, client_gender, client_id, client_type, client_account, client_password, client_tel)
+        values(#{name},#{gender},#{ID},#{type},#{account},#{password},#{tel});
+    </insert>
     <update id="update">
         set
             client_name=#{name},

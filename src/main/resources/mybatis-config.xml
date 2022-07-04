@@ -39,8 +39,6 @@
     </environments>
     <mappers>
         <!--加载sql映射文件-->
-        <!--TODO-->
-<!--        <mapper resource="UserMapper.xml"/>-->
         <package name="mapper"/>
 
     </mappers>

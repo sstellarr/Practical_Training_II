@@ -34,4 +34,27 @@ public class BedServiceImpl implements BedService {
         sqlSession.close();
 
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        SqlSession sqlSession=factory.openSession();
+        BedMapper mapper = sqlSession.getMapper(BedMapper.class);
+        //调用方法
+        mapper.deleteById(id);
+        sqlSession.commit();//提交事务
+        //释放资源
+        sqlSession.close();
+    }
+
+    @Override
+    public void update(Bed bed) {
+        SqlSession sqlSession=factory.openSession();
+        BedMapper mapper = sqlSession.getMapper(BedMapper.class);
+        //调用方法
+        mapper.update(bed);
+        sqlSession.commit();//提交事务
+        //释放资源
+        sqlSession.close();
+
+    }
 }

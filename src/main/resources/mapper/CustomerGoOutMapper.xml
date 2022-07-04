@@ -24,6 +24,10 @@
         <result column="escorttel" property="escortTel"/>
         <result column="outgoing_id" property="customerId"/>
     </resultMap>
+    <insert id="add">
+        insert into retreatrecord (outgoingtime, expectedreturntime, actualreturntime, escort, escorttel, outgoing_id)
+        values(#{outGoingTime},#{expectedReturnTime},#{actualReturnTime},#{escort},#{escortTel},#{customerId});
+    </insert>
     <update id="update">
         set
             outgoingtime=#{outGoingTime},

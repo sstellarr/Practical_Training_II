@@ -10,4 +10,9 @@ public interface CustomerService {
 
 
     void add(Customer customer);
+
+    void deleteById(Integer id);
+
+    void update(Customer customer);
+
 }

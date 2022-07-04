@@ -11,4 +11,9 @@ public interface StaffService {
 
     void add(Staff staff);
 
+    void deleteById(Integer id);
+
+    void update(Staff staff);
+
+
 }

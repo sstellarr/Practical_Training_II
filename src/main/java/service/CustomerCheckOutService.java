@@ -10,4 +10,9 @@ public interface CustomerCheckOutService {
 
 
     void add(CustomerCheckOut customerCheckOut);
+
+    void deleteById(Integer id);
+
+    void update(CustomerCheckOut customerCheckOut);
+
 }

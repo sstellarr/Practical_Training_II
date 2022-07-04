@@ -3,6 +3,7 @@ package mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
+import pojo.CustomerCheckIn;
 import pojo.Staff;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public interface StaffMapper {
     @Select("select *  from staff where account=#{username} and password=#{password}")
     List<Staff> select(@Param("username") String username, @Param("password") String password);
 
+    void add(Staff staff );
     void deleteById(Integer id);
 
     void update(Staff staff);

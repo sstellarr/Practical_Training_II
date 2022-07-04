@@ -2,6 +2,7 @@ package mapper;
 
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
+import pojo.CustomerCheckIn;
 import pojo.FoodRecord;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public interface FoodRecordMapper {
     @ResultMap("FoodRecordResultMap")
     List<FoodRecord> selectAll();
 
+    void add(FoodRecord foodRecord );
     void deleteById(Integer id);
 
     void update(FoodRecord foodRecord);

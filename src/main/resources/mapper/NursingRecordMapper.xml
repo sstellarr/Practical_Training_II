@@ -23,6 +23,10 @@
         <result column="record_userid" property="userId"/>
         <result column="record_levelid" property="levelId"/>
     </resultMap>
+    <insert id="add">
+        insert into retreatrecord (content, startdate, enddate, record_userid,record_levelid)
+        values(#{content},#{start},#{end},#{userId},#{levelId});
+    </insert>
     <update id="update">
         set
             content=#{content},

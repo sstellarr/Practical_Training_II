@@ -28,6 +28,21 @@
         <result column="height" property="height"/>
         <result column="birthday" property="birthday"/>
     </resultMap>
+    <insert id="add">
+        insert into retreatrecord (
+        name,
+        gender,
+        age,
+        tel,
+        idcardnumber,
+        filenumber,
+        account,
+        password,
+        height,
+        birthday
+        )
+        values(#{name},#{gender},#{age},#{tel},#{idCardNumber},#{fileNumber},#{account},#{password},#{height},#{birthday});
+    </insert>
     <update id="update">
         set
             name=#{name},

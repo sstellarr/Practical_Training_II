@@ -10,4 +10,9 @@ public interface NursingRecordService {
 
 
     void add(NursingRecord nursingRecord);
+
+    void deleteById(Integer id);
+
+    void update(NursingRecord nursingRecord);
+
 }

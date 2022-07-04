@@ -41,19 +41,6 @@ public interface BedMapper {
     void update(Bed bed);
 
 
-    /*
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(BedInfo record);
-
-    BedInfo selectByPrimaryKey(Integer id);
-
-    List<BedInfo> selectAll(BedInfo bedInfo);
-
-    int updateByPrimaryKey(BedInfo record);
-
-    List<BedInfo> selectByState(BedInfo bedInfo);
-     */
 
 
 

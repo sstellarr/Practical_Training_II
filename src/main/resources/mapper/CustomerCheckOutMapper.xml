@@ -22,6 +22,10 @@
         <result column="auditopinion" property="auditOpinion"/>
         <result column="retreat_id" property="retreatId"/>
     </resultMap>
+    <insert id="add">
+        insert into retreatrecord (retreattime, retreatreason, asktime, auditperson, auditopinion, retreat_id)
+        values(#{retreattime}, #{retreatreason}, #{asktime},#{auditperson},#{auditopinion},#{retreat_id} );
+    </insert>
 
     <update id="update">
         set

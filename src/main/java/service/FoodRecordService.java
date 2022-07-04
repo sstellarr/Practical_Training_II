@@ -10,4 +10,9 @@ public interface FoodRecordService {
 
 
     void add(FoodRecord foodRecord);
+
+    void deleteById(Integer id);
+
+    void update(FoodRecord foodRecord);
+
 }

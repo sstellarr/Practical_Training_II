@@ -15,6 +15,10 @@
         <result column="name" property="name"/>
         <result column="state" property="status"/>
     </resultMap>
+    <insert id="add">
+        insert into retreatrecord (name,state )
+        values(#{name},#{status});
+    </insert>
     <update id="update">
         set
             name=#{name},

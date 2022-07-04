@@ -10,4 +10,9 @@ public interface CustomerGoOutService {
 
 
     void add(CustomerGoOut customerGoOut);
+
+    void deleteById(Integer id);
+
+    void update(CustomerGoOut customerGoOut);
+
 }

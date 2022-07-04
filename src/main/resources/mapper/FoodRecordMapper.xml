@@ -15,6 +15,10 @@
         <result column="food" property="food"/>
         <result column="food_id" property="foodId"/>
     </resultMap>
+    <insert id="add">
+        insert into retreatrecord (food, food_id)
+        values(#{food},#{foodId});
+    </insert>
     <update id="update">
         set
             food=#{food},

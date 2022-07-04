@@ -18,6 +18,9 @@ public interface BedService {
      */
     void add(Bed bed);
 
+    void deleteById(Integer id);
+
+    void update(Bed bed);
 
 
 

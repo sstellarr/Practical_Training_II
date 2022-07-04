@@ -17,4 +17,9 @@ public interface CustomerCheckInService {
      * @param customerCheckIn
      */
     void add(CustomerCheckIn customerCheckIn);
+
+    void deleteById(Integer id);
+
+    void update(CustomerCheckIn customerCheckIn);
+
 }
