@@ -21,16 +21,32 @@ CONSTRAINT fk_record_level FOREIGN KEY(record_levelid) REFERENCES nursinglevel(i
  */
 
 public class NursingRecord {
-    /*
-    TODO
-     前端要删除一部分
-     */
     private Integer id;
     private String content; //内容
     private Date start; //开始时间
     private Date end; //结束时间
     private Integer userId;  //与顾客的外键
     private Integer levelId; //与等级的外键
+
+    public NursingRecord() {
+    }
+
+    public NursingRecord(String content, Date start, Date end, Integer userId, Integer levelId) {
+        this.content = content;
+        this.start = start;
+        this.end = end;
+        this.userId = userId;
+        this.levelId = levelId;
+    }
+
+    public NursingRecord(Integer id, String content, Date start, Date end, Integer userId, Integer levelId) {
+        this.id = id;
+        this.content = content;
+        this.start = start;
+        this.end = end;
+        this.userId = userId;
+        this.levelId = levelId;
+    }
 
     public Integer getId() {
         return id;

@@ -5,7 +5,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 import pojo.Bed;
-import pojo.User;
 
 import java.io.IOException;
 import java.io.InputStream;

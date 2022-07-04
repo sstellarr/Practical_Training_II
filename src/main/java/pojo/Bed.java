@@ -21,6 +21,23 @@ public class Bed {
     private String isAvailable;    //是否可用
     private Integer userId; //使用者编号（外键）
 
+    public Bed() {
+    }
+
+    public Bed(Integer roomId, Integer buildingId, String isAvailable) {
+        this.roomId = roomId;
+        this.buildingId = buildingId;
+        this.isAvailable = isAvailable;
+    }
+
+    public Bed(Integer id, Integer roomId, Integer buildingId, String isAvailable, Integer userId) {
+        this.id = id;
+        this.roomId = roomId;
+        this.buildingId = buildingId;
+        this.isAvailable = isAvailable;
+        this.userId = userId;
+    }
+
     public Integer getId() {
         return id;
     }

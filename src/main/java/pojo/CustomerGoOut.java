@@ -1,5 +1,7 @@
 package pojo;
 
+import java.sql.Date;
+
 /**
  * 客户外出
  */
@@ -27,6 +29,30 @@ public class CustomerGoOut {
     private String escort;  //陪同人
     private String escortTel;  //陪同人电话
     private Integer customerId; //外出客户id（外键）
+
+    public CustomerGoOut() {
+    }
+
+    public CustomerGoOut(Integer id, String outGoingReason, String outGoingTime, String expectedReturnTime, String actualReturnTime, String escort, String escortTel, Integer customerId) {
+        this.id = id;
+        this.outGoingReason = outGoingReason;
+        this.outGoingTime = outGoingTime;
+        this.expectedReturnTime = expectedReturnTime;
+        this.actualReturnTime = actualReturnTime;
+        this.escort = escort;
+        this.escortTel = escortTel;
+        this.customerId = customerId;
+    }
+
+    public CustomerGoOut(String outGoingReason, String outGoingTime, String expectedReturnTime, String actualReturnTime, String escort, String escortTel, Integer customerId) {
+        this.outGoingReason = outGoingReason;
+        this.outGoingTime = outGoingTime;
+        this.expectedReturnTime = expectedReturnTime;
+        this.actualReturnTime = actualReturnTime;
+        this.escort = escort;
+        this.escortTel = escortTel;
+        this.customerId = customerId;
+    }
 
     public Integer getId() {
         return id;

@@ -22,6 +22,22 @@ public class FoodRecord {
     private Date date;  //日期
     private Integer foodId;    //与客户的外键
 
+    public FoodRecord() {
+    }
+
+    public FoodRecord(Integer id, String food, Date date, Integer foodId) {
+        this.id = id;
+        this.food = food;
+        this.date = date;
+        this.foodId = foodId;
+    }
+
+    public FoodRecord(String food, Date date, Integer foodId) {
+        this.food = food;
+        this.date = date;
+        this.foodId = foodId;
+    }
+
     public Integer getId() {
         return id;
     }

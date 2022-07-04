@@ -29,6 +29,28 @@ public class CustomerCheckOut {
     private String auditOpinion;    //监管人意见
     private Integer retreatId;     //退房客户id（外键）
 
+    public CustomerCheckOut() {
+    }
+
+    public CustomerCheckOut(Integer id, Date retreatTime, String retreatReason, Date askTime, String auditPerson, String auditOpinion, Integer retreatId) {
+        this.id = id;
+        this.retreatTime = retreatTime;
+        this.retreatReason = retreatReason;
+        this.askTime = askTime;
+        this.auditPerson = auditPerson;
+        this.auditOpinion = auditOpinion;
+        this.retreatId = retreatId;
+    }
+
+    public CustomerCheckOut(Date retreatTime, String retreatReason, Date askTime, String auditPerson, String auditOpinion, Integer retreatId) {
+        this.retreatTime = retreatTime;
+        this.retreatReason = retreatReason;
+        this.askTime = askTime;
+        this.auditPerson = auditPerson;
+        this.auditOpinion = auditOpinion;
+        this.retreatId = retreatId;
+    }
+
     public Integer getId() {
         return id;
     }

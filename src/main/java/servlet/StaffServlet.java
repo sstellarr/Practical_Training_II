@@ -51,4 +51,48 @@ public class StaffServlet extends BaseServlet{
             writer.write("登录失败");
         }
     }
+
+    public void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Staff> staff = staffService.selectAll();
+        //TODO
+    }
+
+    public void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        String id=req.getParameter("id");
+        String name=req.getParameter("name");
+        String gender=req.getParameter("gender");
+        String staffId=req.getParameter("staffid");
+        String type=req.getParameter("type");
+        String account=req.getParameter("account");
+        String password=req.getParameter("password");
+        String tel=req.getParameter("tel");
+        String relation=req.getParameter("relation");
+
+        Staff staff = new Staff(name, gender, staffId, type, account, password, tel, relation);
+        staffService.add(staff);
+    }
+
+
+    public void deleteById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        staffService.deleteById(Integer.parseInt(id));
+
+    }
+
+    public void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        String name=req.getParameter("name");
+        String gender=req.getParameter("gender");
+        String staffId=req.getParameter("staffid");
+        String type=req.getParameter("type");
+        String account=req.getParameter("account");
+        String password=req.getParameter("password");
+        String tel=req.getParameter("tel");
+        String relation=req.getParameter("relation");
+
+        Staff staff = new Staff(Integer.parseInt(id),name, gender, staffId, type, account, password, tel, relation);
+        staffService.update(staff);
+
+    }
+
 }

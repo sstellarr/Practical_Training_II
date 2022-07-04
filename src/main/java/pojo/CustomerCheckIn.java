@@ -26,6 +26,26 @@ public class CustomerCheckIn {
     String attention;   //注意事项
     int customerId;     //客户ID（外键）
 
+    public CustomerCheckIn() {
+    }
+
+    public CustomerCheckIn(int id, int bedId, Date checkInDate, Date expirationDate, String attention, int customerId) {
+        this.id = id;
+        this.bedId = bedId;
+        this.checkInDate = checkInDate;
+        this.expirationDate = expirationDate;
+        this.attention = attention;
+        this.customerId = customerId;
+    }
+
+    public CustomerCheckIn(int bedId, Date checkInDate, Date expirationDate, String attention, int customerId) {
+        this.bedId = bedId;
+        this.checkInDate = checkInDate;
+        this.expirationDate = expirationDate;
+        this.attention = attention;
+        this.customerId = customerId;
+    }
+
     public int getId() {
         return id;
     }

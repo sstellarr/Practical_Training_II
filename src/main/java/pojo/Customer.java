@@ -35,6 +35,36 @@ public class Customer {
     private Integer height; //身高
     private Date birthday;  //生日
 
+    public Customer() {
+    }
+
+    public Customer(Integer id, String name, String gender, Integer age, String tel, String idCardNumber, String fileNumber, String account, String password, Integer height, Date birthday) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+        this.tel = tel;
+        this.idCardNumber = idCardNumber;
+        this.fileNumber = fileNumber;
+        this.account = account;
+        this.password = password;
+        this.height = height;
+        this.birthday = birthday;
+    }
+
+    public Customer(String name, String gender, Integer age, String tel, String idCardNumber, String fileNumber, String account, String password, Integer height, Date birthday) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+        this.tel = tel;
+        this.idCardNumber = idCardNumber;
+        this.fileNumber = fileNumber;
+        this.account = account;
+        this.password = password;
+        this.height = height;
+        this.birthday = birthday;
+    }
+
     public Integer getId() {
         return id;
     }

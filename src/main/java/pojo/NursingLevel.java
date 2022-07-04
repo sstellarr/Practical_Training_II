@@ -17,6 +17,20 @@ public class NursingLevel {
     private String name;  //等级名称
     private String status; //启用状态
 
+    public NursingLevel() {
+    }
+
+    public NursingLevel(String name, String status) {
+        this.name = name;
+        this.status = status;
+    }
+    public NursingLevel(Integer id, String name, String status) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+    }
+
+
     public Integer getId() {
         return id;
     }
@@ -36,6 +50,7 @@ public class NursingLevel {
     public String getStatus() {
         return status;
     }
+
 
     public void setStatus(String status) {
         this.status = status;

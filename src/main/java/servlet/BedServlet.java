@@ -27,46 +27,38 @@ public class BedServlet extends BaseServlet{
      * @throws IOException
      */
     public void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //1.调用service查询
         List<Bed> beds = bedService.selectAll();
 
-        //2.转为JSON
-        //TODO
-        String jsonString= JSON.toJSONString(beds);
-
-        //3.写数据
-        resp.setContentType("text/json;charset=utf-8");
-        resp.getWriter().write(jsonString);
+        //TODO：怎么显示
     }
 
-    /**
-     * 添加床位
-     * @param req
-     * @param resp
-     * @throws ServletException
-     * @throws IOException
-     */
     public void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        //1.接受床位数据
-        BufferedReader br=req.getReader();
-        String params=br.readLine();
+        String buildingId=req.getParameter("buildingid");
+        String roomId=req.getParameter("rommid");
+        String isAvailable=req.getParameter("isavaibable");
 
-        Bed bed = JSON.parseObject(params, Bed.class);
-
-        //2.调用service添加
+        Bed bed = new Bed(Integer.parseInt(roomId),Integer.parseInt(buildingId),isAvailable);
         bedService.add(bed);
-
-        //3.响应成功
-        //TODO
-        resp.getWriter().write("添加成功");
+        //TODO:是否要响应成功
 
     }
 
-    public void deleteById(Integer id){
-
+    public void deleteById(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        String id=req.getParameter("id");
+        bedService.deleteById(Integer.parseInt(id));
+        //TODO:是否要响应成功
     }
 
-    public void update(Bed bed){
+    public void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
+        String id=req.getParameter("id");
+        String buildingId=req.getParameter("buildingid");
+        String roomId=req.getParameter("rommid");
+        String isAvailable=req.getParameter("isavaibable");
+        String userId=req.getParameter("userid");//TODO：这个需要吗？
+
+        Bed bed = new Bed(Integer.parseInt(id),Integer.parseInt(roomId),Integer.parseInt(buildingId),isAvailable,Integer.parseInt(userId));
+        bedService.update(bed);
+        //TODO:是否要响应成功
     }
 }

@@ -30,6 +30,32 @@ public class  Staff{
 
     private String relation; //与客户的关系；服务对象
 
+    public Staff() {
+    }
+
+    public Staff(String name, String gender, String staffId, String type, String account, String password, String tel, String relation) {
+        this.name = name;
+        this.gender = gender;
+        this.staffId = staffId;
+        this.type = type;
+        this.account = account;
+        this.password = password;
+        this.tel = tel;
+        this.relation = relation;
+    }
+
+    public Staff(Integer id, String name, String gender, String staffId, String type, String account, String password, String tel, String relation) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.staffId = staffId;
+        this.type = type;
+        this.account = account;
+        this.password = password;
+        this.tel = tel;
+        this.relation = relation;
+    }
+
     public Integer getId() {
         return id;
     }
