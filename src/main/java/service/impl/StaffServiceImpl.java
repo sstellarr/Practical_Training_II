@@ -24,6 +24,15 @@ public class StaffServiceImpl implements StaffService {
     }
 
     @Override
+    public List<Staff> select(String username, String password) {
+        SqlSession sqlSession=factory.openSession();
+        StaffMapper mapper = sqlSession.getMapper(StaffMapper.class);
+        List<Staff> staff = mapper.select(username,password);
+        sqlSession.close();
+        return staff;
+    }
+
+    @Override
     public void add(Staff staff) {
         SqlSession sqlSession=factory.openSession();
         StaffMapper mapper = sqlSession.getMapper(StaffMapper.class);
