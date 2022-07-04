@@ -16,5 +16,5 @@ public interface StaffService {
 
     void update(Staff staff);
 
-
+    List<Staff> selectById(Integer id);
 }

@@ -28,6 +28,7 @@
     </insert>
 
     <update id="update">
+        update retreatrecord
         set
             retreattime=#{retreatTime},
             retreatreason=#{retreatReason},
@@ -40,6 +41,9 @@
     <delete id="deleteById">
         delete from retreatrecord where id=#{id};
     </delete>
+    <select id="selectById" resultType="pojo.CustomerCheckOut">
+        select * from retreatrecord where id=#{id};
+    </select>
 
 
 </mapper>

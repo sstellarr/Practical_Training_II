@@ -22,6 +22,9 @@ public interface BedService {
 
     void update(Bed bed);
 
+    List<Bed> selectById(Integer id);
+
+
 
 
 

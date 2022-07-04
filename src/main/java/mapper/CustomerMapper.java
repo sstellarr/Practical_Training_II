@@ -19,6 +19,8 @@ public interface CustomerMapper {
     @ResultMap("CustomerResultMap")
     List<Customer> selectAll();
 
+    List<Customer> selectById(Integer id);
+
     void add(Customer customer );
     void deleteById(Integer id);
 

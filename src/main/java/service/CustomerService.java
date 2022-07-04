@@ -14,5 +14,6 @@ public interface CustomerService {
     void deleteById(Integer id);
 
     void update(Customer customer);
+    List<Customer> selectById(Integer id);
 
 }

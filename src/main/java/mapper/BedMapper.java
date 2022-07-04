@@ -21,6 +21,7 @@ public interface BedMapper {
     @ResultMap("BedResultMap")
     List<Bed> selectAll();
 
+    List<Bed> selectById(Integer id);
     /**
      * 添加床位
      * @param bed
@@ -39,6 +40,8 @@ public interface BedMapper {
      * @param bed
      */
     void update(Bed bed);
+
+
 
 
 

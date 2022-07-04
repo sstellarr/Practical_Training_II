@@ -19,6 +19,7 @@ public interface CustomerCheckOutMapper {
     @ResultMap("CustomerCheckOutResultMap")
     List<CustomerCheckOut> selectAll();
 
+    List<CustomerCheckOut> selectById(Integer id);
 
     void add(CustomerCheckOut customerCheckOut );
 

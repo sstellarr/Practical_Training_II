@@ -21,11 +21,15 @@ public interface CustomerCheckInMapper {
     @ResultMap("CustomerCheckInResultMap")
     List<CustomerCheckIn> selectAll();
 
+    List<CustomerCheckIn> selectById(Integer id);
+
     void add(CustomerCheckIn customerCheckIn );
 
     void deleteById(Integer id);
 
     void update(CustomerCheckIn customerCheckIn);
+
+
 
 
 }

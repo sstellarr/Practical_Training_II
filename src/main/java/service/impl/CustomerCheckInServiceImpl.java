@@ -58,4 +58,13 @@ public class CustomerCheckInServiceImpl implements CustomerCheckInService {
         sqlSession.close();
 
     }
+
+    @Override
+    public List<CustomerCheckIn> selectById(Integer id) {
+        SqlSession sqlSession=factory.openSession();
+        CustomerCheckInMapper mapper = sqlSession.getMapper(CustomerCheckInMapper.class);
+        List<CustomerCheckIn> customerCheckIns = mapper.selectById(id);
+        sqlSession.close();
+        return customerCheckIns;
+    }
 }

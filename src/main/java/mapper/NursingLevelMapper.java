@@ -18,6 +18,8 @@ public interface NursingLevelMapper {
     @ResultMap("NursingLevelResultMap")
     List<NursingLevel> selectAll();
 
+    List<NursingLevel> selectById(Integer id);
+
     void add(NursingLevel nursingLevel );
     void deleteById(Integer id);
 

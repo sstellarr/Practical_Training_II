@@ -24,6 +24,7 @@
         values(#{roomId}, #{buildingId}, #{isAvailable} );
     </insert>
     <update id="update">
+        update bedmanage
         set
             roomid=#{roomId},
             buildingid=#{buildingId},
@@ -34,8 +35,8 @@
     <delete id="deleteById">
         delete from bedmanage where id = #{id};
     </delete>
-
-
-
+    <select id="selectById" resultType="pojo.Bed">
+        select * from bedmanage where id=#{id};
+    </select>
 
 </mapper>

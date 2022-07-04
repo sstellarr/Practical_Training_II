@@ -28,6 +28,7 @@
     </insert>
 
     <update id="update">
+        update checkinrecord
         set
             bedid=#{bedId},
             checkindate=#{checkInDate},
@@ -41,8 +42,9 @@
     <delete id="deleteById">
         delete from checkinrecord where id=#{id};
     </delete>
-
-
+    <select id="selectById" resultType="pojo.CustomerCheckIn">
+        select * from checkinrecord where id=#{id};
+    </select>
 
 
 </mapper>

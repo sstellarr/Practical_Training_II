@@ -57,4 +57,13 @@ public class BedServiceImpl implements BedService {
         sqlSession.close();
 
     }
+
+    @Override
+    public List<Bed> selectById(Integer id) {
+        SqlSession sqlSession=factory.openSession();
+        BedMapper mapper = sqlSession.getMapper(BedMapper.class);
+        List<Bed> beds = mapper.selectById(id);
+        sqlSession.close();
+        return beds;
+    }
 }

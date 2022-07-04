@@ -60,4 +60,13 @@ public class CustomerGoOutServiceImpl implements CustomerGoOutService {
 
 
     }
+
+    @Override
+    public List<CustomerGoOut> selectById(Integer id) {
+        SqlSession sqlSession=factory.openSession();
+        CustomerGoOutMapper mapper = sqlSession.getMapper(CustomerGoOutMapper.class);
+        List<CustomerGoOut> customerGoOuts = mapper.selectById(id);
+        sqlSession.close();
+        return customerGoOuts;
+    }
 }

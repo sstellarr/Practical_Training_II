@@ -16,6 +16,7 @@ public interface CustomerGoOutMapper {
     @ResultMap("CustomerGoOutResultMap")
     List<CustomerGoOut> selectAll();
 
+    List<CustomerGoOut> selectById(Integer id);
     void add(CustomerGoOut customerGoOut );
     void deleteById(Integer id);
 

@@ -15,4 +15,6 @@ public interface NursingLevelService {
 
     void update(NursingLevel nursingLevel);
 
+    List<NursingLevel> selectById(Integer id);
+
 }

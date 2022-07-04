@@ -17,4 +17,6 @@ public interface FoodRecordService {
 
     void selectByFoodId(Integer foodId);
 
+    List<FoodRecord> selectById(Integer id);
+
 }

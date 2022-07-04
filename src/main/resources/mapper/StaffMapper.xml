@@ -27,10 +27,11 @@
 
     </resultMap>
     <insert id="add">
-        insert into retreatrecord (client_name, client_gender, client_id, client_type, client_account, client_password, client_tel,client_relation)
+        insert into staff (client_name, client_gender, client_id, client_type, client_account, client_password, client_tel,client_relation)
         values(#{name},#{gender},#{staffId},#{type},#{account},#{password},#{tel},#{relation});
     </insert>
     <update id="update">
+        update staff
         set
             client_name=#{name},
             client_gender=#{gender},
@@ -45,6 +46,9 @@
     <delete id="deleteById">
         delete from staff where id=#{id};
     </delete>
+    <select id="selectById" resultType="pojo.Staff">
+        select * from staff where id=#{id};
+    </select>
 
 
 </mapper>

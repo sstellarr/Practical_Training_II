@@ -22,4 +22,6 @@ public interface CustomerCheckInService {
 
     void update(CustomerCheckIn customerCheckIn);
 
+    List<CustomerCheckIn> selectById(Integer id);
+
 }

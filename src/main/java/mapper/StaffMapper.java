@@ -30,6 +30,7 @@ public interface StaffMapper {
     @Select("select *  from staff where account=#{username} and password=#{password}")
     List<Staff> select(@Param("username") String username, @Param("password") String password);
 
+    List<Staff> selectById(Integer id);
     void add(Staff staff );
     void deleteById(Integer id);
 

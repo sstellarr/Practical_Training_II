@@ -14,5 +14,5 @@ public interface CustomerCheckOutService {
     void deleteById(Integer id);
 
     void update(CustomerCheckOut customerCheckOut);
-
+    List<CustomerCheckOut> selectById(Integer id);
 }

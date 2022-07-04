@@ -16,10 +16,11 @@
         <result column="state" property="status"/>
     </resultMap>
     <insert id="add">
-        insert into retreatrecord (name,state )
+        insert into nursinglevel (name,state )
         values(#{name},#{status});
     </insert>
     <update id="update">
+        update nursinglevel
         set
             name=#{name},
             state=#{status}
@@ -28,5 +29,8 @@
     <delete id="deleteById">
         delete from nursinglevel where id=#{id};
     </delete>
+    <select id="selectById" resultType="pojo.NursingLevel">
+        select * from nursinglevel where id=#{id};
+    </select>
 
 </mapper>

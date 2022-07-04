@@ -29,7 +29,7 @@
         <result column="birthday" property="birthday"/>
     </resultMap>
     <insert id="add">
-        insert into retreatrecord (
+        insert into customer (
         name,
         gender,
         age,
@@ -44,6 +44,7 @@
         values(#{name},#{gender},#{age},#{tel},#{idCardNumber},#{fileNumber},#{account},#{password},#{height},#{birthday});
     </insert>
     <update id="update">
+        update customer
         set
             name=#{name},
             gender=#{gender},
@@ -61,6 +62,9 @@
     <delete id="deleteById">
         delete from customer where id=#{id};
     </delete>
+    <select id="selectById" resultType="pojo.Customer">
+        select * from customer where id=#{id};
+    </select>
 
 
 </mapper>

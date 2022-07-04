@@ -17,10 +17,11 @@
         <result column="food_id" property="foodId"/>
     </resultMap>
     <insert id="add">
-        insert into retreatrecord (food, food_id, food_date)
+        insert into foodrecord (food, food_id, food_date)
         values(#{food},#{foodId},#{date});
     </insert>
     <update id="update">
+        update foodrecord
         set
             food=#{food},
             food_id=#{foodId},
@@ -32,6 +33,9 @@
     </delete>
     <select id="selectByFoodId">
         select * from foodrecord where food_id=#{foodId};
+    </select>
+    <select id="selectById" resultType="pojo.FoodRecord">
+        select * from foodrecord where id=#{id};
     </select>
 
 

@@ -59,4 +59,13 @@ public class CustomerServiceImpl implements CustomerService {
         //释放资源
         sqlSession.close();
     }
+
+    @Override
+    public List<Customer> selectById(Integer id) {
+        SqlSession sqlSession=factory.openSession();
+        CustomerMapper mapper = sqlSession.getMapper(CustomerMapper.class);
+        List<Customer> customers = mapper.selectById(id);
+        sqlSession.close();
+        return customers;
+    }
 }

@@ -69,5 +69,14 @@ public class FoodRecordServiceImpl implements FoodRecordService {
         sqlSession.close();
     }
 
+    @Override
+    public List<FoodRecord> selectById(Integer id) {
+        SqlSession sqlSession=factory.openSession();
+        FoodRecordMapper mapper = sqlSession.getMapper(FoodRecordMapper.class);
+        List<FoodRecord> foodRecords = mapper.selectById(id);
+        sqlSession.close();
+        return foodRecords;
+    }
+
 
 }

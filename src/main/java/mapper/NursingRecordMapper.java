@@ -18,6 +18,8 @@ public interface NursingRecordMapper {
     @ResultMap("NursingRecordResultMap")
     List<NursingRecord> selectAll();
 
+    List<NursingRecord> selectById(Integer id);
+
     void add(NursingRecord nursingRecord );
     void deleteById(Integer id);
 

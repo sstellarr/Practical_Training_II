@@ -15,4 +15,6 @@ public interface CustomerGoOutService {
 
     void update(CustomerGoOut customerGoOut);
 
+    List<CustomerGoOut> selectById(Integer id);
+
 }

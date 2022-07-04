@@ -57,4 +57,13 @@ public class CustomerCheckOutServiceImpl implements CustomerCheckOutService {
         //释放资源
         sqlSession.close();
     }
+
+    @Override
+    public List<CustomerCheckOut> selectById(Integer id) {
+        SqlSession sqlSession=factory.openSession();
+        CustomerCheckOutMapper mapper = sqlSession.getMapper(CustomerCheckOutMapper.class);
+        List<CustomerCheckOut> customerCheckOuts = mapper.selectById(id);
+        sqlSession.close();
+        return customerCheckOuts;
+    }
 }

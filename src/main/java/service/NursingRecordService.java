@@ -15,4 +15,6 @@ public interface NursingRecordService {
 
     void update(NursingRecord nursingRecord);
 
+    List<NursingRecord> selectById(Integer id);
+
 }

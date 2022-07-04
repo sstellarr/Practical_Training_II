@@ -61,4 +61,12 @@ public class BedServlet extends BaseServlet{
         resp.getWriter().write("添加成功");
 
     }
+
+    public void deleteById(Integer id){
+
+    }
+
+    public void update(Bed bed){
+
+    }
 }

@@ -24,10 +24,11 @@
         <result column="record_levelid" property="levelId"/>
     </resultMap>
     <insert id="add">
-        insert into retreatrecord (content, startdate, enddate, record_userid,record_levelid)
+        insert into nursingrecord (content, startdate, enddate, record_userid,record_levelid)
         values(#{content},#{start},#{end},#{userId},#{levelId});
     </insert>
     <update id="update">
+        update nursingrecord
         set
             content=#{content},
             startdate=#{start},
@@ -39,5 +40,8 @@
     <delete id="deleteById">
         delete from nursingrecord where id=#{id};
     </delete>
+    <select id="selectById" resultType="pojo.NursingRecord">
+        select * from nursingrecord where id=#{id};
+    </select>
 
 </mapper>

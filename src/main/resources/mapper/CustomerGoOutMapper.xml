@@ -25,10 +25,11 @@
         <result column="outgoing_id" property="customerId"/>
     </resultMap>
     <insert id="add">
-        insert into retreatrecord (outgoingtime, expectedreturntime, actualreturntime, escort, escorttel, outgoing_id)
+        insert into outgoing (outgoingtime, expectedreturntime, actualreturntime, escort, escorttel, outgoing_id)
         values(#{outGoingTime},#{expectedReturnTime},#{actualReturnTime},#{escort},#{escortTel},#{customerId});
     </insert>
     <update id="update">
+        update outgoing
         set
             outgoingtime=#{outGoingTime},
             expectedreturntime=#{expectedReturnTime},
@@ -41,6 +42,9 @@
     <delete id="deleteById">
         delete from outgoing where id=#{id};
     </delete>
+    <select id="selectById" resultType="pojo.CustomerGoOut">
+        select * from outgoing where id=#{id};
+    </select>
 
 
 </mapper>

@@ -1,14 +1,8 @@
 package servlet;
 
-import mapper.AdministratorMapper;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import pojo.Administrator;
 import service.AdministratorService;
-import service.BedService;
 import service.impl.AdministratorServiceImpl;
-import service.impl.BedServiceImpl;
-import util.SqlSessionFactoryUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,7 +36,6 @@ public class AdministratorServlet extends BaseServlet{
             //登录失败
             writer.write("登录失败");
         }
-
     }
 
 }

@@ -58,4 +58,13 @@ public class NursingRecordServiceImpl implements NursingRecordService {
         sqlSession.close();
 
     }
+
+    @Override
+    public List<NursingRecord> selectById(Integer id) {
+        SqlSession sqlSession=factory.openSession();
+        NursingRecordMapper mapper = sqlSession.getMapper(NursingRecordMapper.class);
+        List<NursingRecord> nursingLevels = mapper.selectById(id);
+        sqlSession.close();
+        return nursingLevels;
+    }
 }
