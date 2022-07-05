@@ -65,7 +65,7 @@ public class CustomerCheckInServlet extends BaseServlet{
         String id=req.getParameter("id");
         CustomerCheckIn customerCheckIn = customerCheckInService.selectById(Integer.parseInt(id));
         req.setAttribute("customerCheckIn", customerCheckIn);
-        req.getRequestDispatcher("updateCustomerCheckIn").forward(req,resp);
+        req.getRequestDispatcher("/updateCustomerCheckIn.jsp").forward(req,resp);
 
     }
 

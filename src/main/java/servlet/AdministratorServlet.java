@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/Administrator/*")
+@WebServlet("/AdministratorServlet/*")
 public class AdministratorServlet extends BaseServlet {
     private AdministratorService administratorServlet = new AdministratorServiceImpl();
 

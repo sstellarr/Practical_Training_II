@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
 
-@WebServlet("/CustomerCheckout/*")
+@WebServlet("/CustomerCheckOutServlet/*")
 public class CustomerCheckOutServlet extends BaseServlet{
 
     private CustomerCheckOutService customerCheckOutService=new CustomerCheckOutServiceImpl();
@@ -68,7 +68,7 @@ public class CustomerCheckOutServlet extends BaseServlet{
         String id=req.getParameter("id");
         CustomerCheckOut customerCheckOut = customerCheckOutService.selectById(Integer.parseInt(id));
         req.setAttribute("customerCheckOut", customerCheckOut);
-        req.getRequestDispatcher("updateCustomerCheckOut").forward(req,resp);
+        req.getRequestDispatcher("/updateCustomerCheckOut.jsp").forward(req,resp);
     }
 
 

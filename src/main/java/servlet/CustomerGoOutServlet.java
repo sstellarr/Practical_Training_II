@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/CustomerGoOut/*")
+@WebServlet("/CustomerGoOutServlet/*")
 public class CustomerGoOutServlet extends BaseServlet{
     private CustomerGoOutService customerGoOutService=new CustomerGoOutServiceImpl();
 
@@ -66,7 +66,7 @@ public class CustomerGoOutServlet extends BaseServlet{
         String id=req.getParameter("id");
         CustomerGoOut customerGoOut = customerGoOutService.selectById(Integer.parseInt(id));
         req.setAttribute("customerGoOut", customerGoOut);
-        req.getRequestDispatcher("updateCustomerGoOut").forward(req,resp);
+        req.getRequestDispatcher("/updateCustomerGoOut.jsp").forward(req,resp);
 
     }
 }

@@ -62,7 +62,7 @@ public class BedServlet extends BaseServlet{
         String id=req.getParameter("id");
         Bed bed = bedService.selectById(Integer.parseInt(id));
         req.setAttribute("bed", bed);
-        req.getRequestDispatcher("updateBed").forward(req,resp);
+        req.getRequestDispatcher("/updateBed.jsp").forward(req,resp);
 
     }
 }

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
 
-@WebServlet("/Customer/*")
+@WebServlet("/CustomerServlet/*")
 public class CustomerServlet extends BaseServlet{
     private CustomerService customerService =new CustomerServiceImpl();
 
@@ -75,7 +75,7 @@ public class CustomerServlet extends BaseServlet{
         String id=req.getParameter("id");
         Customer customer = customerService.selectById(Integer.parseInt(id));
         req.setAttribute("customer", customer);
-        req.getRequestDispatcher("updateCustomer").forward(req,resp);
+        req.getRequestDispatcher("/updateCustomer.jsp").forward(req,resp);
 
     }
 }

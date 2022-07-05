@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
 
-@WebServlet("/FoodRecord/*")
+@WebServlet("/FoodRecordServlet/*")
 public class FoodRecordServlet extends BaseServlet{
     private FoodRecordService foodRecordService=new FoodRecordServiceImpl();
 
@@ -57,7 +57,7 @@ public class FoodRecordServlet extends BaseServlet{
         String id=req.getParameter("id");
         FoodRecord foodRecord = foodRecordService.selectById(Integer.parseInt(id));
         req.setAttribute("foodRecord", foodRecord);
-        req.getRequestDispatcher("updateFoodRecord").forward(req,resp);
+        req.getRequestDispatcher("/updateFoodRecord.jsp").forward(req,resp);
 
     }
 }

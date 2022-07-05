@@ -63,7 +63,7 @@ public class NursingRecordServlet extends BaseServlet{
         String id=req.getParameter("id");
         NursingRecord nursingRecord = nursingLevelService.selectById(Integer.parseInt(id));
         req.setAttribute("nursingRecord", nursingRecord);
-        req.getRequestDispatcher("updateNursingRecord").forward(req,resp);
+        req.getRequestDispatcher("/updateNursingRecord.jsp").forward(req,resp);
 
     }
 }

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/NursingLevel/*")
+@WebServlet("/NursingLevelServlet/*")
 public class NursingLevelServlet extends BaseServlet{
     private NursingLevelService nursingLevelService=new NursingLevelServiceImpl();
 
@@ -55,7 +55,7 @@ public class NursingLevelServlet extends BaseServlet{
         String id=req.getParameter("id");
         NursingLevel nursingLevel = nursingLevelService.selectById(Integer.parseInt(id));
         req.setAttribute("nursingLevel", nursingLevel);
-        req.getRequestDispatcher("updateNursingLevel").forward(req,resp);
+        req.getRequestDispatcher("/updateNursingLevel.jsp").forward(req,resp);
 
     }
 }

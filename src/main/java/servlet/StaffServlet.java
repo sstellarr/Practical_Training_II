@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/Staff/*")
+@WebServlet("/StaffServlet/*")
 public class StaffServlet extends BaseServlet{
     private StaffService staffService= new StaffServiceImpl();
 
@@ -99,7 +99,7 @@ public class StaffServlet extends BaseServlet{
         String id=req.getParameter("id");
         Staff staff = staffService.selectById(Integer.parseInt(id));
         req.setAttribute("staff", staff);
-        req.getRequestDispatcher("updateStaff").forward(req,resp);
+        req.getRequestDispatcher("/updateStaff.jsp").forward(req,resp);
 
     }
 }
