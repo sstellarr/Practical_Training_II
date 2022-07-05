@@ -30,15 +30,12 @@ public class AdministratorServlet extends BaseServlet {
         //判断是否为null
         if (administrators != null) {
             //登录成功
-            //TODO:跳到index2.html
-//            writer.write("登录成功");
-//            req.getRequestDispatcher("/succeed.jsp").forward(req, resp);
-            resp.sendRedirect("/login.jsp");    //TODO
+            resp.sendRedirect("/index2.html");
 
         } else {
             //登录失败
-//            writer.write("登录失败");
-            resp.sendRedirect("/login.jsp");    //TODO
+            writer.write("登录失败");
+//            resp.sendRedirect("/login.jsp");
 
         }
     }

@@ -37,14 +37,12 @@ public class StaffServlet extends BaseServlet{
         //判断是否为null
         if(staff!=null){
             //登录成功
-            //TODO:跳到index1.html
-            //TODO:sendRedirect方法
 //            req.getRequestDispatcher("/succeed.jsp").forward(req, resp);
-            resp.sendRedirect("/login.jsp");    //TODO
+            resp.sendRedirect("index1.html");
         }else{
             //登录失败
-//            writer.write("登录失败");
-            resp.sendRedirect("/login.jsp");    //TODO
+            writer.write("登录失败");
+//            resp.sendRedirect("/login.jsp");
         }
     }
 
