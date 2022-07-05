@@ -15,7 +15,20 @@
 <!--    height int,-->
 <!--    birthday date-->
 <!--    );-->
-    <resultMap id="CustomerResultMap=" type="Customer">
+
+<!--    private Integer id;-->
+<!--    private String name;    //姓名-->
+<!--    private String  gender;    //性别-->
+<!--    private Integer age;    //年龄-->
+<!--    private String tel;    //电话-->
+<!--    private String idCardNumber;   //身份卡号-->
+<!--    private String fileNumber;     //档案编号-->
+<!--    private String account;    //用户名-->
+<!--    private String password;   //密码-->
+<!--    private Integer height; //身高-->
+<!--    private Date birthday;  //生日-->
+
+    <resultMap id="CustomerResultMap=" type="pojo.Customer">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="gender" property="gender"/>
@@ -64,6 +77,9 @@
     </delete>
     <select id="selectById" resultType="pojo.Customer">
         select * from customer where id=#{id};
+    </select>
+    <select id="selectAll" resultType="pojo.Customer">
+        select  * from customer;
     </select>
 
 

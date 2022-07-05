@@ -19,10 +19,13 @@ public class BedServlet extends BaseServlet{
 
     public void selectAll(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Bed> beds = bedService.selectAll();
+        System.out.println("1");
 
         req.setAttribute("beds",beds);
+        System.out.println("2");
 
         req.getRequestDispatcher("/queryBed.jsp").forward(req,resp);
+        System.out.println("3");
     }
 
     public void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{

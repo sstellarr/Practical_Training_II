@@ -11,8 +11,8 @@ import java.util.List;
  */
 public interface CustomerMapper {
 
-    @Select("select  * from customer")
-    @ResultMap("CustomerResultMap")
+//    @Select("select  * from customer")
+//    @ResultMap("CustomerResultMap")
     List<Customer> selectAll();
 
     Customer selectById(Integer id);

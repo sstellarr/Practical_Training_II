@@ -11,7 +11,13 @@
 <!--    CONSTRAINT fk_bed_user FOREIGN KEY(userid) REFERENCES customer(id)-->
 <!--    );-->
 
-    <resultMap id="BedResultMap" type="Bed">
+<!--    private Integer id;-->
+<!--    private Integer roomId; //房间号-->
+<!--    private Integer buildingId; //所在建筑-->
+<!--    private String isAvailable;    //是否可用-->
+<!--    private Integer userId; //使用者编号（外键）-->
+
+    <resultMap id="BedResultMap" type="pojo.Bed">
         <id column="id" property="id"/>
         <result column="roomid" property="roomId"/>
         <result column="buildingid" property="buildingId"/>
@@ -36,6 +42,9 @@
     </delete>
     <select id="selectById" resultType="pojo.Bed">
         select * from bedmanage where id=#{id};
+    </select>
+    <select id="selectAll" resultType="pojo.Bed">
+        select * from bedmanage;
     </select>
 
 </mapper>

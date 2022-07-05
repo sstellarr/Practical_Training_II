@@ -13,8 +13,8 @@ import java.util.List;
 
 public interface BedMapper {
 
-    @Select("select * from bedmanage")
-    @ResultMap("BedResultMap")
+//    @Select("select * from bedmanage")
+//    @ResultMap("BedResultMap")
     List<Bed> selectAll();
 
     /**

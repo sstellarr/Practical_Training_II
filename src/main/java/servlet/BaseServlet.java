@@ -32,12 +32,16 @@ public class BaseServlet extends HttpServlet {
         try {
             Method method = cls.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
             //执行方法
+            System.out.println("成功进入try");
             method.invoke(this,req,resp);
         } catch (NoSuchMethodException e) {
+            System.out.println("异常：NoSuchMethodException#######################");
             e.printStackTrace();
         } catch (InvocationTargetException e) {
+            System.out.println("异常：InvocationTargetException#######################");
             e.printStackTrace();
         } catch (IllegalAccessException e) {
+            System.out.println("异常：IllegalAccessException#######################");
             e.printStackTrace();
         }
 
